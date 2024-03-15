@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Data</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    input[type="text"], textarea, select, input[type="number"] {
+        width: calc(50% - 5px);
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    .container {
+        margin-top: 20px;
+        border-top: 1px solid #ccc;
+        padding-top: 20px;
+    }
+</style>
+</head>
+<body>
+    <form id="myForm">
+        
+        <div id="additionalColumns"></div>
+        <button type="button" onclick="addNewColumn()">Add New Column</button><br><br>
+        <label for="fontSelect">Select Font:</label>
+        <select id="fontSelect" onchange="changeFont(this.value)">
+            <option value="Arial, sans-serif">Arial</option>
+            <option value="Times New Roman, serif">Times New Roman</option>
+            <option value="Courier New, monospace">Courier New</option>
+            <!-- Add more font options as needed -->
+        </select><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <div class="container" id="submittedData"></div>
+    
+    <script>
+        function addNewColumn() {
+            var columnName = prompt("Enter column name:");
+            if (columnName) {
+                var inputName = document.createElement("input");
+                inputName.type = "text";
+                inputName.name = columnName + "_name";
+                inputName.placeholder = "Column Name";
+                inputName.required = true;
+                inputName.classList.add("columnDetail");
+
+                var inputAlign = document.createElement("select");
+                inputAlign.name = columnName + "_align";
+                inputAlign.required = true;
+                var options = ["Left", "Center", "Right"];
+                for (var i = 0; i < options.length; i++) {
+                    var option = document.createElement("option");
+                    option.value = options[i].toLowerCase();
+                    option.textContent = options[i];
+                    inputAlign.appendChild(option);
+                }
+                inputAlign.classList.add("columnDetail");
+
+                var inputFontSize = document.createElement("input");
+                inputFontSize.type = "number";
+                inputFontSize.name = columnName + "_fontSize";
+                inputFontSize.placeholder = "Font Size";
+                inputFontSize.required = true;
+                inputFontSize.min = "1"; // Ensure font size is positive
+                inputFontSize.classList.add("columnDetail");
+
+                document.getElementById("additionalColumns").appendChild(inputName);
+                document.getElementById("additionalColumns").appendChild(inputAlign);
+                document.getElementById("additionalColumns").appendChild(inputFontSize);
+            }
+        }
+
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var formData = new FormData(this);
+            var submittedData = "";
+            for (var pair of formData.entries()) {
+                var alignment = "";
+                if (pair[0].endsWith("_align")) {
+                    alignment = "text-align: " + pair[1] + ";";
+                } else if (!pair[0].endsWith("_fontSize")) { // Exclude font size from submitted data
+                    var style = alignment;
+                    if (pair[0].endsWith("_name")) { // Check if it's a column name
+                        var fontSizeInput = document.querySelector("input[name='" + pair[0].replace("_name", "_fontSize") + "']");
+                        var columnAlignment = document.querySelector("select[name='" + pair[0].replace("_name", "_align") + "']");
+                        if (fontSizeInput && columnAlignment) {
+                            style += "font-size: " + fontSizeInput.value + "px;";
+                            style += "text-align: " + columnAlignment.value + ";";
+                        }
+                    }
+                    submittedData += '<div class="submittedDataItem" style="' + style + '">' + pair[1] + "</div>";
+                }
+            }
+            document.getElementById("submittedData").innerHTML = submittedData;
+        });
+
+        function printPDF() {
+            var printContents = document.getElementById("submittedData").innerHTML;
+            var originalContents = document.body.innerHTML;
+            document.body.innerHTML = printContents;
+            window.print();
+            document.body.innerHTML = originalContents;
+        }
+
+        function changeFont(font) {
+            document.body.style.fontFamily = font;
+        }
+    </script>
+
+    <button onclick="printPDF()">Print PDF</button>
+</body>
+</html>
