@@ -150,10 +150,12 @@
 
         function printPDF() {
             var printContents = document.getElementById("submittedData").innerHTML;
-            var originalContents = document.body.innerHTML;
-            document.body.innerHTML = printContents;
-            window.print();
-            document.body.innerHTML = originalContents;
+            var printWindow = window.open('', '_blank');
+            printWindow.document.write('<html><head><title>Printed Data</title></head><body>');
+            printWindow.document.write(printContents);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            printWindow.print();
         }
 
         function changeFont(font) {
