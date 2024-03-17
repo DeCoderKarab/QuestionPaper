@@ -67,6 +67,34 @@
             background-color: #000;
         }
     }
+    /* Stylish delete button */
+    .deleteButton {
+        background-color: #f44336; /* Red */
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 10px;
+        transition: background-color 0.3s ease; /* Added transition for smoother hover effect */
+    }
+    .deleteButton:hover {
+        background-color: #d32f2f; /* Darker red */
+    }
+
+    /* Better styling for move buttons */
+    .moveButton {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 20px;
+        margin: 0 5px;
+        padding: 0;
+        vertical-align: middle;
+    }
+    .moveButton:hover {
+        color: #008CBA; /* Blue */
+    }
 </style>
 </head>
 <body>
@@ -83,9 +111,13 @@
             <!-- Add more font options as needed -->
         </select><br><br>
         <!-- Stylish submit button -->
-        <input type="submit" value="Submit" style="background-color: #008CBA; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;" class="button">
+        <input type="submit" value="Submit" class="button">
+        <!-- Stylish Print PDF button -->
+        <button onclick="printPDF()" class="button" id="torchButton">Print PDF</button>
     </form>
-    <div class="container" id="submittedData"></div>
+    <div class="container">
+        <pre id="submittedData"></pre>
+    </div>
     
     <script>
         function addNewColumn() {
@@ -118,9 +150,47 @@
                 inputFontSize.min = "1"; // Ensure font size is positive
                 inputFontSize.classList.add("columnDetail");
 
-                document.getElementById("additionalColumns").appendChild(inputName);
-                document.getElementById("additionalColumns").appendChild(inputAlign);
-                document.getElementById("additionalColumns").appendChild(inputFontSize);
+                var deleteButton = document.createElement("button");
+                deleteButton.textContent = "Delete";
+                deleteButton.classList.add("deleteButton");
+                deleteButton.onclick = function() {
+                    var parent = this.parentNode;
+                    parent.parentNode.removeChild(parent);
+                    document.body.style.backgroundColor = "#f44336"; // Change background color to red
+                    setTimeout(function() {
+                        document.body.style.backgroundColor = "#f4f4f4"; // Revert background color after 2 seconds
+                    }, 100);
+                };
+
+                var moveUpButton = document.createElement("button");
+                moveUpButton.textContent = "▲";
+                moveUpButton.classList.add("moveButton");
+                moveUpButton.onclick = function() {
+                    var parent = this.parentNode;
+                    if (parent.previousElementSibling) {
+                        parent.parentNode.insertBefore(parent, parent.previousElementSibling);
+                    }
+                };
+
+                var moveDownButton = document.createElement("button");
+                moveDownButton.textContent = "▼";
+                moveDownButton.classList.add("moveButton");
+                moveDownButton.onclick = function() {
+                    var parent = this.parentNode;
+                    if (parent.nextElementSibling) {
+                        parent.parentNode.insertBefore(parent.nextElementSibling, parent);
+                    }
+                };
+
+                var columnContainer = document.createElement("div");
+                columnContainer.appendChild(inputName);
+                columnContainer.appendChild(inputAlign);
+                columnContainer.appendChild(inputFontSize);
+                columnContainer.appendChild(deleteButton);
+                columnContainer.appendChild(moveUpButton);
+                columnContainer.appendChild(moveDownButton);
+
+                document.getElementById("additionalColumns").appendChild(columnContainer);
             }
         }
 
@@ -159,7 +229,7 @@
         }
 
         function changeFont(font) {
-            document.body.style.fontFamily = font;
+            document.getElementById("submittedData").style.fontFamily = font;
         }
 
         function torchOn() {
@@ -172,8 +242,5 @@
             document.getElementById("torchButton").classList.remove("torch");
         }
     </script>
-
-    <!-- Stylish Print PDF button -->
-    <button onclick="printPDF()" style="background-color: #008CBA; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;" class="button" id="torchButton">Print PDF</button>
 </body>
 </html>
