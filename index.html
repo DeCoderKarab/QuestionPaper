@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Form Data</title>
+<title>Form Data | Stylish Web Page</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/responsive-css/1.0.0/responsive.min.css">
 <style>
     body {
@@ -16,6 +16,9 @@
         transition: background-color 0.5s ease;
         margin: 0;
         padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Ensures footer stays at the bottom */
     }
     form {
         max-width: 400px;
@@ -103,9 +106,42 @@
     .submittedDataItem {
         white-space: pre-wrap;
     }
+    footer {
+        margin-top: auto; /* Pushes footer to the bottom */
+        text-align: center;
+        background-color: #5a55ef;
+        color: white;
+        padding: 10px 0;
+        width: 100%;
+    }
+    footer a {
+        color: black;
+    }
+    h1 {
+        color: #008CBA; /* Blue */
+        text-align: center;
+    }
+    
+    /* Print Styles for A4 Size */
+    @media print {
+        body {
+            width: 21cm;
+            height: 29.7cm;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 21cm;
+            margin: 0 auto;
+        }
+        .submittedDataItem {
+            page-break-inside: avoid;
+        }
+    }
 </style>
 </head>
 <body>
+    <h1>QPaper</h1>
     <form id="myForm">
         <div id="additionalColumns"></div>
         <button type="button" onclick="addNewColumn()" class="addColumnButton button" onmouseenter="torchOn()" onmouseleave="torchOff()">Add New Column</button><br><br>
@@ -121,6 +157,8 @@
     <div class="container">
         <pre id="submittedData"></pre>
     </div>
+    
+    <footer>This is design by <a href="https://decoderkarab.github.io/Demo-01/">Karan Suryawanshi</a></footer>
     
     <script>
         function addNewColumn() {
@@ -150,7 +188,7 @@
                 inputFontSize.name = columnName + "_fontSize";
                 inputFontSize.placeholder = "Font Size";
                 inputFontSize.required = true;
-                inputFontSize.min = "1";
+                inputFontSize.min = "1"; // Ensure font size is positive
                 inputFontSize.classList.add("columnDetail");
 
                 var deleteButton = document.createElement("button");
@@ -159,9 +197,9 @@
                 deleteButton.onclick = function() {
                     var parent = this.parentNode;
                     parent.parentNode.removeChild(parent);
-                    document.body.style.backgroundColor = "#f44336";
+                    document.body.style.backgroundColor = "#f44336"; // Change background color to red
                     setTimeout(function() {
-                        document.body.style.backgroundColor = "#f4f4f4";
+                        document.body.style.backgroundColor = "#f4f4f4"; // Revert background color after 2 seconds
                     }, 100);
                 };
 
@@ -201,10 +239,12 @@
             event.preventDefault();
             var formData = new FormData(this);
             var submittedData = "";
+            var previousAlignment = ""; // Track alignment of previous column
             for (var pair of formData.entries()) {
                 var alignment = "";
                 if (pair[0].endsWith("_align")) {
                     alignment = "text-align: " + pair[1] + ";";
+                    previousAlignment = pair[1]; // Update previous alignment
                 } else if (!pair[0].endsWith("_fontSize")) {
                     var style = alignment;
                     if (pair[0].endsWith("_name")) {
@@ -212,7 +252,7 @@
                         var columnAlignment = document.querySelector("select[name='" + pair[0].replace("_name", "_align") + "']");
                         if (fontSizeInput && columnAlignment) {
                             style += "font-size: " + fontSizeInput.value + "px;";
-                            style += "text-align: " + columnAlignment.value + ";";
+                            style += "text-align: " + (columnAlignment.value || previousAlignment) + ";"; // Use previous alignment if not provided
                         }
                     }
                     submittedData += '<div class="submittedDataItem" style="' + style + '">' + pair[1] + "</div>";
