@@ -6,7 +6,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Site Metas -->
   <meta name="keywords" content="" />
   <meta name="description" content="" />
@@ -81,9 +81,7 @@
 
   <!-- about section -->
   <section class="about_section layout_padding-bottom">
-    <div class="square-box">
-      <img src="images/square.png" alt="">
-    </div>
+    
     <div class="container">
       <div class="row">
         <div class="col-md-6">
@@ -100,8 +98,8 @@
         </div>
         <div class="col-md-6">
           <div class="detail-box">
-            <div style="margin-top: -130px;" class="heading_container">
-              <img style="width: 8%;margin-left: 40px;" src="images/location1.png" alt="">
+            <div style="margin-top: -20px;" class="heading_container">
+              <img style="width: 4%;margin-left: 40px;" src="images/location1.png" alt="">
               <h2>Balaji Park</h2>
             </div>
             <br>
@@ -124,59 +122,55 @@
     </div>
   </section>
 
-  <section style="margin-top: -100px;" class="about_section layout_padding-bottom">
-    <div class="square-box">
-      <img src="images/square.png" alt="">
-    </div>
+  
+
+  <section class="about_section layout_padding-bottom">
+    
     <div class="container">
       <div class="row">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="img-box">
-              <div class="slider">
-                <!-- <img style="height: 400px; width: 500px;" src="images/video.mp4"> -->
-                <video style="height: 400px; width: 500px;" id="myVideo" src="images/video.mp4" muted controls  ></video>
-              </div>
-             
+        <div class="col-md-6">
+          <div class="img-box">
+            <div class="slider">
+              <video id="myVideo" src="images/video.mp4" controls ></video>
             </div>
+            <button onclick="plusSlides(-1)" class="prev">&#10094;</button>
+            <button onclick="plusSlides(1)" class="next">&#10095;</button>
           </div>
-        <div style="margin-left: 599px; margin-top: -290px;" class="col-md-6">
+        </div>
+        <div class="col-md-6">
           <div class="detail-box">
-            <div style="margin-top: -130px;" class="heading_container">
-              <!-- <img style="width: 8%;margin-left: 40px;" src="images/location1.png" alt=""> -->
+            <div style="margin-top: -20px;" class="heading_container">
+              <!-- <img style="width: 4%;margin-left: 40px;" src="images/location1.png" alt=""> -->
               <h2>More Details</h2>
             </div>
             <br>
             <h6>Landmarks<span style="color: rgb(231, 239, 20);"></span></h6>
             <strong> Pandav lene caves, Radisson blu hotel</strong>
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            <h1> </h1>
+            <h6>Furnishing<span style="color: rgb(234, 241, 18);"></span></h6>
+            <strong>Furnished </strong>
+            <h1> </h1>
+            <h6>Age of Construction<span style="color: rgb(234, 241, 18);"></span></h6>
+            <strong> 5 to 10 years</strong>
             <br>
-            <h6>Furnishing<span style="color: rgb(231, 239, 20);"></span></h6>
-            <strong>Furnished</strong>
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            <h6>Agent<span style="color: rgb(234, 241, 18);"></span></h6>
+            <strong style="color: red;"> Mayur Patil</strong>
             <br>
-            <h6>Type of Ownership<span style="color: rgb(231, 239, 20);"></span></h6>
-            <strong>Freehold</strong>
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            <br>
-            <h6>Age of Construction<span style="color: rgb(231, 239, 20);"></span></h6>
-            <strong>5 to 10 years</strong>
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            <br>
-            <h1>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </h1>
-
-            <h6>Agent <span style="color: rgb(231, 239, 20);"></span></h6>
-            <strong style="color: rgb(243, 75, 3);">Mayur Patil</strong>
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            <br>
-
-            <a  href="tel:919890531862">Contact</a>
+            <a style="margin-top: 50px;" href="tel:919890531862">Contact</a>
+            
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- virtual tour  -->
+
+
+
+
+  
+<!--  -->
+  <!--  -->
+
   <script>
     const video = document.getElementById('myVideo');
     const fullscreenButton = document.getElementById('fullscreenButton');
