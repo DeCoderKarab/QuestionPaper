@@ -58,7 +58,7 @@ body {
   
   @keyframes slideshow {
     0% { background-image: url(../images/bg-home.jpg); }
-    50% { background-image: url(../images/hero-bg.jpg); }
+    50% { background-image: url(../images/project-1.jpg); }
     100% { background-image: url(../images/bg-home2.jpg); }
     
   }
@@ -215,7 +215,7 @@ body {
     margin-top: 12px;
     outline: none;
     border: none;
-    background-color: transparent;
+    background-color: black;
   }
   
   .custom_menu-btn button span {
