@@ -222,7 +222,7 @@ a:focus {
   display: block;
   width: 50px;
   height: 5px;
-  background-color: #fff;
+  background-color: #101010;
   margin: 6px 0;
   -webkit-transition: all .3s;
   transition: all .3s;
@@ -343,7 +343,7 @@ a:focus {
 .slider_section .detail-box .btn-box a:hover {
   background-color: #3554d1;
   border-color: transparent;
-  color: #ffffff;
+  color: #fbf4f4;
 }
 
 .find_section {
@@ -965,3 +965,152 @@ a:focus {
 
 /* end footer section*/
 /*# sourceMappingURL=style.css.map */
+
+
+/* this is slider in about us*/
+.slider {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.slider img {
+  width: 100%;
+  height: auto;
+  display: none;
+}
+
+.slider img:first-child {
+  display: block;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: rgb(23, 239, 38);
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/*property details*/
+.property-cart {
+  display: flex;
+  justify-content: center; /* Center the cart horizontally */
+  max-width: 100%;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.property-details {
+  width: 100%; /* Ensure the property details take full width of the container */
+}
+
+.property-details h2 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.property-details ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.property-details ul li {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #444;
+  line-height: 1.5; /* Add more space between lines */
+}
+
+.property-details ul li strong {
+  font-weight: bold;
+  color: #333;
+}
+
+
+/* contact button */
+.contact-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+  background-color: #45a049;
+}
+
+.contact-button:active {
+  background-color: #398439;
+}
+
+
+/* describe container*/
+.property-details-container {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+}
+
+.property-detail {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.property-contact {
+    margin-top: 20px;
+}
+
+.book-visit-button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.book-visit-button:hover {
+    background-color: #45a049;
+}
+
+.book-visit-button:active {
+    background-color: #398439;
+}

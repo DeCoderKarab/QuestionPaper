@@ -14,6 +14,12 @@
 
   <title>Musale Estate</title>
 
+  <!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 
@@ -28,7 +34,7 @@
 <body>
   <div class="hero_area">
     <!-- header section strats -->
-    <header class="header_section">
+    <header  class="header_section">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container">
           <a class="navbar-brand" href="index.html">
@@ -39,7 +45,7 @@
               
             </ul>
 
-            <div class="custom_menu-btn">
+            <div style="color: black;" class="custom_menu-btn">
               <button onclick="openNav()">
                 <span class="s-1">
 
@@ -67,7 +73,7 @@
     </header>
     <!-- end header section -->
     <!-- slider section -->
-    <section  class="slider_section ">
+    <section   class="slider_section ">
       <div   class="container-fluid">
         <div   class="row">
           <div style="background-color: rgb(66, 153, 230);" class="col-md-4 offset-md-1">
@@ -120,8 +126,10 @@
           </div>
           
           <div class="col-md-2">
-            <button type="submit" class="">
-              search
+            <button type="submit"  class=""> 
+              <a href="Search.html">
+                search
+              </a>
             </button>
           </div>
         </div>
@@ -143,31 +151,55 @@
       <div class="row">
         <div class="col-md-6">
           <div class="img-box">
-            <img src="images/about-us.jpg" alt="">
+            <div class="slider">
+              <img style="height: 400px; width: 500px;" src="images/about-img.jpg" alt="">
+              <img style="height: 400px; width: 500px;" src="images/about-us.jpg" alt="">
+              <img style="height: 400px; width: 500px;" src="images/about-img.jpg" alt="">
+              <img style="height: 400px; width: 500px;" src="images/project-1.jpg" alt="">
+            </div>
+            <button onclick="plusSlides(-1)" class="prev">&#10094;</button>
+            <button onclick="plusSlides(1)" class="next">&#10095;</button>
           </div>
         </div>
         <div class="col-md-6">
           <div class="detail-box">
             <div class="heading_container">
-              <h2>
-                About
-              </h2>
+              <h2>About</h2>
             </div>
-            <p>
-              Welcome to Masule Real Estate, your trusted partner in realizing your dream of owning a home. At Masule, we understand that a home is not just a structure; it's a sanctuary where memories are made, families grow, and dreams take flight.
-
-Our Vision:
-To redefine the real estate landscape by offering affordable housing solutions without compromising on quality, thereby making homeownership a reality for everyone.
-            </p>
-            <a href="">
-              Read More
-            </a>
+            <p>Welcome to Masule Real Estate, your trusted partner in realizing your dream of owning a home. At Masule, we understand that a home is not just a structure; it's a sanctuary where memories are made, families grow, and dreams take flight.</p>
+            <p>Our Vision: To redefine the real estate landscape by offering affordable housing solutions without compromising on quality, thereby making homeownership a reality for everyone.</p>
+            <a href="about.html">Read More</a>
           </div>
         </div>
       </div>
     </div>
   </section>
+  
+  
+  <script>
+    var slideIndex = 1;
+  showSlides(slideIndex);
 
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("slider")[0].getElementsByTagName("img");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[slideIndex-1].style.display = "block";
+  }
+  </script>
+  
   <!-- end about section -->
 
   <!-- sale section -->
@@ -176,10 +208,10 @@ To redefine the real estate landscape by offering affordable housing solutions w
     <div class="container-fluid">
       <div class="heading_container">
         <h2>
-          House For Sale
+          Our Recent Housing Project
         </h2>
         <p>
-          There are many variations of passages of Lorem Ipsum available, but the
+          Our some popular project's are live for the sale
         </p>
       </div>
       <div class="sale_container">
@@ -188,8 +220,11 @@ To redefine the real estate landscape by offering affordable housing solutions w
             <img src="images/project-1.jpg" alt="">
           </div>
           <div class="detail-box">
-            <h6>
-              Balaji Park
+            <h6 >
+              <a href="Properti.html">
+                Balaji Park
+              </a>
+              
             </h6>
             <p>
               There are many variations of passages of Lorem Ipsum available, but
@@ -263,7 +298,7 @@ To redefine the real estate landscape by offering affordable housing solutions w
         </div>
       </div>
       <div class="btn-box">
-        <a href="">
+        <a href="Search.html">
           Find More
         </a>
       </div>
