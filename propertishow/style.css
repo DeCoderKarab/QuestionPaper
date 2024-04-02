@@ -56,12 +56,12 @@ body {
     animation: slideshow 10s infinite; /* 2 seconds per image, 3 images total */
   }
   
-  @keyframes slideshow {
+  /* @keyframes slideshow {
     0% { background-image: url(../images/bg-home.jpg); }
     50% { background-image: url(../images/project-1.jpg); }
     100% { background-image: url(../images/bg-home2.jpg); }
     
-  }
+  } */
   
   
   .sub_page .hero_area {

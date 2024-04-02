@@ -53,7 +53,7 @@ body {
   background-repeat: no-repeat;
   background-position: top right;
   background-size: 60% 100%;
-  animation: slideshow 10s infinite; /* 2 seconds per image, 3 images total */
+  animation: slideshow 10s infinite;  /* 2 seconds per image, 3 images total */
 }
 
 @keyframes slideshow {
