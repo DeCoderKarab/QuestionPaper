@@ -80,21 +80,19 @@
 
 
   <!-- about section -->
-  <section class="about_section layout_padding-bottom">
+  <section id="1bhk" style="display: none;" class="about_section layout_padding-bottom">
 
     <div class="maincontainer">
 
-    
-    
     <div class="container">
       <div class="row">
         <div class="col-md-6">
           <div class="img-box">
-            <div class="slider">
-              <img style="height: 400px; " src="images/about-img.jpg" alt="">
-              <img style="height: 400px; " src="images/about-us.jpg" alt="">
-              <img style="height: 400px; " src="images/about-img.jpg" alt="">
-              <img style="height: 400px;" src="images/project-1.jpg" alt="">
+            <div class="slider1">
+              <img style="height: 400px; " src="images/sat_interior.jpg" alt="">
+              <img style="height: 400px; " src="images/sat_interior2.jpg" alt="">
+              <img style="height: 400px; " src="images/sat_interior3.jpeg" alt="">
+              <img style="height: 400px;" src="images/sat_interior4.jpg" alt="">
             </div>
             <button onclick="plusSlides(-1)" class="prev">&#10094;</button>
             <button style="margin-right: 12px;" onclick="plusSlides(1)" class="next">&#10095;</button>
@@ -104,21 +102,21 @@
           <div class="detail-box">
             <div style="margin-top: -20px;" class="heading_container">
               <img style="width: 4%;margin-left: 40px;" src="images/location1.png" alt="">
-              <h2>Balaji Park</h2>
+              <h2>Satpur</h2>
             </div>
             <br>
             <h6>SPECIFICATION<span style="color: rgb(231, 239, 20);"></span></h6>
-            <strong> <img style="width: 5%; margin-top: -10px;" src="images/bath.png" alt=""> 1Bath &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 1Bed &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 1KITCHENT</strong>
+            <strong> <img style="width: 5%; margin-top: -10px;" src="images/bath.png" alt=""> 1 Bath &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 2 Bed &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 1 KITCHENT</strong>
             <h1> </h1>
             <h6>Area<span style="color: rgb(234, 241, 18);"></span></h6>
             <strong> <img style="width: 5%; margin-top: -10px;" src="images/measure.png" alt=""> 800sqft</strong>
             <h1> </h1>
             <h6>Address<span style="color: rgb(234, 241, 18);"></span></h6>
-            <strong> &nbsp;&nbsp;&nbsp; balaji park near patil park satpur ambad link nashik - 10</strong>
+            <strong> &nbsp;&nbsp;&nbsp; radison park near  satpur ashok nagar nashik</strong>
             <br>
             <a style="margin-top: 50px;" href="tel:919890531862">Contact</a>
             &nbsp;&nbsp;&nbsp;
-            <a id="fullscreenButton" href="#" class="fullscreen-button">Get A Virtual Tour</a>
+            <a id="fullscreenButton1" href="#" class="fullscreen-button">Get A Virtual Tour</a>
             
           </div>
         </div>
@@ -151,7 +149,7 @@
             </div>
             <br>
             <h6>Landmarks<span style="color: rgb(231, 239, 20);"></span></h6>
-            <strong> Pandav lene caves, Radisson blu hotel</strong>
+            <strong>near shramik nagar</strong>
             <h1> </h1>
             <h6>Furnishing<span style="color: rgb(234, 241, 18);"></span></h6>
             <strong>Furnished </strong>
@@ -163,10 +161,10 @@
             
             <h6>Site Superviser<span style="color: rgb(234, 241, 18);"></span></h6>
             
-            <strong  style="color: red;">Mayur Patil</strong>
+            <strong  style="color: red;">xyz xyz</strong>
             <br>
             <a  href="tel:+919890531862">Contact :- 9890531862</a>
-            <video  style="width: 1%;" id="myVideo" src="images/video.mp4"></video>
+            <video  style="width: 1%;" id="myVideo1" src="images/video.mp4"></video>
             <br>
             <!-- <a style="margin-top: 50px;" href="tel:+919890531862">Contact</a> -->
             
@@ -177,60 +175,214 @@
 
   </div>
   </section>
+<!-- end about section -->
 
+<!-- script of slider -->
+<script>
 
+  var slideIndex = 1;
+showSlides(slideIndex);
 
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
 
-  
-<!--  -->
-  <!--  -->
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
 
-  <script>
-    const video = document.getElementById('myVideo');
-    const fullscreenButton = document.getElementById('fullscreenButton');
-    
-    fullscreenButton.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevents the default anchor tag behavior
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("slider1")[0].getElementsByTagName("img");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+}
 
-        if (video.requestFullscreen) {
-            video.requestFullscreen();
-        } else if (video.mozRequestFullScreen) { /* Firefox */
-            video.mozRequestFullScreen();
-        } else if (video.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-            video.webkitRequestFullscreen();
-        } else if (video.msRequestFullscreen) { /* IE/Edge */
-            video.msRequestFullscreen();
-        }
-    });
 </script>
+<!-- script of slider -->
+
+
+
+<!-- second property section -->
+<section id="2bhk" style="display: none;" class="about_section layout_padding-bottom">
+
+  <div class="maincontainer">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="img-box">
+          <div class="slider2">
+            <img style="height: 400px; " src="images/sat_interior.jpg" alt="">
+            <img style="height: 400px; " src="images/sat_interior2.jpg" alt="">
+            <img style="height: 400px; " src="images/sat_interior3.jpeg" alt="">
+            <img style="height: 400px;" src="images/sat_interior4.jpg" alt="">
+          </div>
+          <button onclick="plusSlides(-1)" class="prev">&#10094;</button>
+          <button style="margin-right: 12px;" onclick="plusSlides(1)" class="next">&#10095;</button>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="detail-box">
+          <div style="margin-top: -20px;" class="heading_container">
+            <img style="width: 4%;margin-left: 40px;" src="images/location1.png" alt="">
+            <h2>Satpur</h2>
+          </div>
+          <br>
+          <h6>SPECIFICATION<span style="color: rgb(231, 239, 20);"></span></h6>
+          <strong> <img style="width: 5%; margin-top: -10px;" src="images/bath.png" alt=""> 1Bath &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 2Bed &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 1KITCHENT</strong>
+          <h1> </h1>
+          <h6>Area<span style="color: rgb(234, 241, 18);"></span></h6>
+          <strong> <img style="width: 5%; margin-top: -10px;" src="images/measure.png" alt=""> 1200sqft</strong>
+          <h1> </h1>
+          <h6>Address<span style="color: rgb(234, 241, 18);"></span></h6>
+          <strong> &nbsp;&nbsp;&nbsp; near satpur bus stop </strong>
+          <br>
+          <a style="margin-top: 50px;" href="tel:919890531862">Contact</a>
+          &nbsp;&nbsp;&nbsp;
+          <a id="fullscreenButton2" href="#" class="fullscreen-button">Get A Virtual Tour</a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h1> </h1>
+<!-- </section>
+
+
+
+<section class="about_section layout_padding-bottom"> -->
+  
+  <div  class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="img-box">
+          <div style="height: 300px;width: 380px;" class="slider">
+            <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14997.803435730066!2d73.6940747871582!3d19.98958350000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdded4ab0c106c1%3A0xb916f3b64f284c34!2sMusale%20estates!5e0!3m2!1sen!2sin!4v1711887885765!5m2!1sen!2sin" width="600" height="600" frameborder="0" style="border:0; width: 100%; height:100%" allowfullscreen></iframe>
+          </div>
+          
+          
+        </div>
+      </div>
+      <div  class="col-md-6">
+        <div style="margin-left: 20px;" class="detail-box">
+          <div  class="heading_container">
+            <!-- <img style="width: 4%;margin-left: 40px;" src="images/location1.png" alt=""> -->
+            <h2>More Details</h2>
+          </div>
+          <br>
+          <h6>Landmarks<span style="color: rgb(231, 239, 20);"></span></h6>
+          <strong>ESIC HOSPITAL SATPUR</strong>
+          <h1> </h1>
+          <h6>Furnishing<span style="color: rgb(234, 241, 18);"></span></h6>
+          <strong>Furnished </strong>
+          <h1> </h1>
+          <h6>Age of Construction<span style="color: rgb(234, 241, 18);"></span></h6>
+          <strong> 5 to 10 years</strong>
+          <br>
+          &nbsp;&nbsp;&nbsp;
+          
+          <h6>Site Superviser<span style="color: rgb(234, 241, 18);"></span></h6>
+          
+          <strong  style="color: red;">ABC ABC</strong>
+          <br>
+          <a  href="tel:+919890531862">Contact :- 9890531862</a>
+          <video  style="width: 1%;" id="myVideo2" src="images/video.mp4"></video>
+          <br>
+          <!-- <a style="margin-top: 50px;" href="tel:+919890531862">Contact</a> -->
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>  
+<!-- end second property section  -->
+  <!--  -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const fullscreenButton1 = document.getElementById('fullscreenButton1');
+      const video1 = document.getElementById('myVideo1');
+      fullscreenButton1.addEventListener('click', function (event) {
+        event.preventDefault();
+        if (video1.requestFullscreen) {
+          video1.requestFullscreen();
+        } else if (video1.mozRequestFullScreen) {
+          video1.mozRequestFullScreen();
+        } else if (video1.webkitRequestFullscreen) {
+          video1.webkitRequestFullscreen();
+        } else if (video1.msRequestFullscreen) {
+          video1.msRequestFullscreen();
+        }
+      });
+
+      const fullscreenButton2 = document.getElementById('fullscreenButton2');
+      const video2 = document.getElementById('myVideo2');
+      fullscreenButton2.addEventListener('click', function (event) {
+        event.preventDefault();
+        if (video2.requestFullscreen) {
+          video2.requestFullscreen();
+        } else if (video2.mozRequestFullScreen) {
+          video2.mozRequestFullScreen();
+        } else if (video2.webkitRequestFullscreen) {
+          video2.webkitRequestFullscreen();
+        } else if (video2.msRequestFullscreen) {
+          video2.msRequestFullscreen();
+        }
+      });
+    });
+  </script>
+
 
   <!-- virtual tour -->
   
   <script>
     var slideIndex = 1;
-  showSlides(slideIndex);
+    showSlides(slideIndex);
 
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
-
-  function currentSlide(n) {
-    showSlides(slideIndex = n);
-  }
-
-  function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("slider")[0].getElementsByTagName("img");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
     }
-    slides[slideIndex-1].style.display = "block";
-  }
-  </script>
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("slider2")[0].getElementsByTagName("img");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex-1].style.display = "block";
+    }
+</script>
   <!-- end about section -->
 
+
+    <!-- select section  -->
+
+    <script>
+        // JavaScript code to determine which section to display
+        var urlParams = new URLSearchParams(window.location.search);
+        var category = urlParams.get('category');
+        
+        if (category === '1BHK') {
+            document.getElementById('1bhk').style.display = 'block';
+        } else if (category === '2BHK') {
+            document.getElementById('2bhk').style.display = 'block';
+        }
+    </script>
+
+    <!-- end select section  -->
 
   <!-- info section -->
   <section class="info_section ">

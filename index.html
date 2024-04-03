@@ -100,43 +100,59 @@
   </div>
 
   <!-- find section -->
-  <section class="find_section ">
+  <section class="find_section">
     <div class="container">
-      <form action="">
-        <div class=" form-row">
-          <div class="col-md-5">
-            <select class="form-control" id="categorySelect">
-              <option value="">Select Category</option>
-              <option value="1BHK">1BHK</option>
-              <option value="2BHK">2BHK</option>
-              <option value="3BHK">3BHK</option>
-              <option value="Rowhouse">Rowhouse</option>
-              <option value="Flat">Flat</option>
-            </select>
-          </div>
-          
-          <div class="col-md-5">
-            <select class="form-control" id="districtSelect">
-              <option value="">Select District</option>
-              <option value="Mumbai">Mumbai</option>
-              <option value="Pune">Pune</option>
-              <option value="Pune">nashik</option>
-              <!-- Add more options for other districts as needed -->
-            </select>
-          </div>
-          
-          <div class="col-md-2">
-            <button type="submit"  class=""> 
-              <a href="Search.html">
-                search
-              </a>
-            </button>
-          </div>
-        </div>
+        <form id="searchForm">
+            <div class="form-row">
+                <div class="col-md-5">
+                    <select class="form-control" id="categorySelect">
+                        <option value="">Select Category</option>
+                        <option value="1BHK">1BHK</option>
+                        <option value="2BHK">2BHK</option>
+                        <option value="3BHK">3BHK</option>
+                        <option value="Rowhouse">Rowhouse</option>
+                        <option value="Flat">Flat</option>
+                    </select>
+                </div>
 
-      </form>
+                <div class="col-md-5">
+                    <select class="form-control" id="districtSelect">
+                        <option value="">Select Area</option>
+                        <option value="AshokNagar">AshokNagar</option>
+                        <option value="Mhada">Mhada Colany</option>
+                        <option value="Satpur">Satpur</option>
+                        <!-- Add more options for other districts as needed -->
+                    </select>
+                </div>
+
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-primary">
+                        Search
+                    </button>
+                </div>
+            </div>
+        </form>
     </div>
-  </section>
+</section>
+
+<script>
+    document.getElementById("searchForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // prevent the form from submitting
+
+        var category = document.getElementById("categorySelect").value;
+        var district = document.getElementById("districtSelect").value;
+
+        // If both category and district are selected
+        if (category && district) {
+            // Construct the URL with selected options as parameters
+            var url = district+".html?category=" + encodeURIComponent(category) + "&district=" + encodeURIComponent(district);
+
+            // Redirect to the constructed URL
+            window.location.href = url;
+        }
+    });
+</script>
+
 
   <!-- end find section -->
 
@@ -322,9 +338,9 @@
       </a>
       </div>
       <div class="btn-box">
-        <a href="Search.html">
+        <!-- <a href="Search.html">
           Find More
-        </a>
+        </a> -->
       </div>
     </div>
   </section>
