@@ -220,26 +220,22 @@
 /* responsive.css */
 
 /* Adjustments for smaller screens */
-@media screen and (max-width: 768px) {
+/* responsive.css */
+
+/* Adjustments for smaller screens */
+@media only screen and (max-width: 600px) {
   .calculator-container {
-      flex-direction: column;
-      width: 90%;
+    flex-direction: column; /* Stack items vertically on small screens */
+    width: 100%; /* Full width on small screens */
   }
 
   .calculator,
   .output {
-      flex: 1;
-      width: 100%;
-      margin: 0;
-  }
-
-  .output {
-      margin-top: 20px;
+    width: 100%; /* Full width on small screens */
+    margin-left: 0; /* Remove margin for smaller screens */
   }
 
   canvas {
-      margin-top: 20px;
-      width: 100%;
-      max-width: none;
+    max-width: 300px; /* Reduce the max width of the graph for small screens */
   }
 }
