@@ -216,3 +216,30 @@
   transform: translateY(2px);
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
 }
+
+/* responsive.css */
+
+/* Adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+  .calculator-container {
+      flex-direction: column;
+      width: 90%;
+  }
+
+  .calculator,
+  .output {
+      flex: 1;
+      width: 100%;
+      margin: 0;
+  }
+
+  .output {
+      margin-top: 20px;
+  }
+
+  canvas {
+      margin-top: 20px;
+      width: 100%;
+      max-width: none;
+  }
+}

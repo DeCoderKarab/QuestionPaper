@@ -145,6 +145,14 @@
                     title: {
                         display: true,
                         text: 'Principal vs Interest'
+                    },
+                    onClick: function(event, elements) {
+                        if (elements.length > 0) {
+                            var segmentIndex = elements[0]._index;
+                            var segmentLabel = this.data.labels[segmentIndex];
+                            var segmentValue = this.data.datasets[0].data[segmentIndex];
+                            alert(segmentLabel + ': ₹' + segmentValue.toFixed(2));
+                        }
                     }
                 }
             });

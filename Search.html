@@ -39,8 +39,7 @@
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container">
             <a class="navbar-brand" href="index.html">
-              <img style="width: 20%;" src="images/logo1.png" alt="" />
-            </a>
+              <img style="background-color: white;width: 150px;" src="images/oglogo.png" alt="" />            </a>
             <div class="navbar-collapse" id="">
               <ul class="navbar-nav justify-content-between ">
                 <!-- <div class="User_option">
@@ -84,44 +83,159 @@
       <!-- end header section -->
     </div>
 
-<!-- find section -->
-<section style="margin-top: 70px;" class="find_section ">
-  <div class="container">
-    <form action="">
-      <div class=" form-row">
-        <div class="col-md-5">
-          <select class="form-control" id="categorySelect">
-            <option value="">Select Category</option>
-            <option value="1BHK">1BHK</option>
-            <option value="2BHK">2BHK</option>
-            <option value="3BHK">3BHK</option>
-            <option value="Rowhouse">Rowhouse</option>
-            <option value="Flat">Flat</option>
-          </select>
-        </div>
-        
-        <div class="col-md-5">
-          <select class="form-control" id="districtSelect">
-            <option value="">Select District</option>
-            <option value="Mumbai">Mumbai</option>
-            <option value="Pune">Pune</option>
-            <option value="Pune">nashik</option>
-            <!-- Add more options for other districts as needed -->
-          </select>
-        </div>
-        
-        <div class="col-md-2">
-          <button type="submit"  class=""> 
-            <a href="Search.html">
-              search
-            </a>
-          </button>
-        </div>
-      </div>
 
-    </form>
+<section class="calculator-section">
+  <style>
+      .calculator-section {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          background-color: #f9f9f9;
+      }
+
+      .calculator-container {
+          display: flex;
+          justify-content: space-between;
+          width: 800px;
+          background-color: #fff;
+          padding: 30px;
+          border-radius: 10px;
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .calculator {
+          flex: 0 0 45%; /* Set width for calculator */
+          text-align: center;
+      }
+
+      .output {
+          flex: 0 0 45%; /* Set width for output */
+          text-align: left;
+          margin-left: 20px;
+      }
+
+      h2 {
+          color: #007bff;
+          margin-bottom: 20px;
+      }
+
+      .input-group {
+          margin-bottom: 20px;
+          text-align: left;
+      }
+
+      input {
+          padding: 10px;
+          border-radius: 5px;
+          border: 1px solid #ccc;
+          width: calc(100% - 22px); /* Adjust width to account for padding and border */
+      }
+
+      button {
+          padding: 10px 20px;
+          background-color: #007bff;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+      }
+
+      button:hover {
+          background-color: #0056b3;
+      }
+
+      #result {
+          margin-top: 20px;
+          font-size: 16px;
+          color: #007bff;
+          text-align: left;
+      }
+
+      canvas {
+          margin-top: 20px;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          width: 100%;
+          max-width: 400px;
+      }
+  </style>
+
+  <div class="calculator-container">
+      <div class="calculator">
+          <h2>EMI Calculator</h2>
+          <div class="input-group">
+              <label for="principal">Principal Amount:</label>
+              <input type="number" id="principal" placeholder="Enter Principal Amount">
+          </div>
+          <div class="input-group">
+              <label for="rate">Annual Interest Rate (%):</label>
+              <input type="number" id="rate" step="0.01" placeholder="Enter Annual Interest Rate">
+          </div>
+          <div class="input-group">
+              <label for="time">Loan Term (Years):</label>
+              <input type="number" id="time" placeholder="Enter Loan Term">
+          </div>
+          <button onclick="calculateEMI()">Calculate EMI</button>
+      </div>
+      <div class="output">
+          <div id="result"></div>
+          <canvas id="pieChart" width="400" height="400"></canvas>
+      </div>
   </div>
 </section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  function calculateEMI() {
+      var principal = parseFloat(document.getElementById('principal').value);
+      var annualRate = parseFloat(document.getElementById('rate').value);
+      var time = parseFloat(document.getElementById('time').value);
+
+      var monthlyRate = annualRate / (12 * 100); // monthly interest rate
+      var totalMonths = time * 12; // total number of installments
+
+      var emi = (principal * monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+      var totalPayment = emi * totalMonths;
+      var totalInterest = totalPayment - principal;
+      var apr = ((totalInterest / principal) / time) * 100;
+
+      document.getElementById('result').innerHTML = `
+          <p><strong>Loan EMI:</strong> ₹${emi.toFixed(2)}</p>
+          <p><strong>Loan APR:</strong> ${annualRate}%</p>
+          <p><strong>Total Interest Payable:</strong> ₹${totalInterest.toFixed(2)}</p>
+          <p><strong>Total Payment:</strong> ₹${totalPayment.toFixed(2)} (Principal + Interest)</p>
+      `;
+
+      // Create Pie Chart
+      var ctx = document.getElementById('pieChart').getContext('2d');
+      var pieChart = new Chart(ctx, {
+          type: 'pie',
+          data: {
+              labels: ['Principal', 'Interest'],
+              datasets: [{
+                  data: [principal, totalInterest],
+                  backgroundColor: ['#28a745', '#dc3545'] // Green for principal, Red for interest
+              }]
+          },
+          options: {
+              title: {
+                  display: true,
+                  text: 'Principal vs Interest'
+              },
+              onClick: function(event, elements) {
+                  if (elements.length > 0) {
+                      var segmentIndex = elements[0]._index;
+                      var segmentLabel = this.data.labels[segmentIndex];
+                      var segmentValue = this.data.datasets[0].data[segmentIndex];
+                      alert(segmentLabel + ': ₹' + segmentValue.toFixed(2));
+                  }
+              }
+          }
+      });
+  }
+</script>
 
 <!-- info section -->
 <section class="info_section ">
