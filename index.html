@@ -196,9 +196,12 @@
             <div class="heading_container">
               <h2>About</h2>
             </div>
-            <p>Welcome to Masule Real Estate, your trusted partner in realizing your dream of owning a home. At Masule, we understand that a home is not just a structure; it's a sanctuary where memories are made, families grow, and dreams take flight.</p>
-            <p>Our Vision: To redefine the real estate landscape by offering affordable housing solutions without compromising on quality, thereby making homeownership a reality for everyone.</p>
+            <p id="about_text">Welcome to Masule Real Estate, your trusted partner in realizing your dream of owning a home. At Masule, we understand that a home is not just a structure; it's a sanctuary where memories are made, families grow, and dreams take flight.
+              <br>
+              Our Vision: To redefine the real estate landscape by offering affordable housing solutions without compromising on quality, thereby making homeownership a reality for everyone.</p>
             <a href="about.html">Read More</a>
+            <a class="" onclick="translateToMarathi()">Translate</a>
+
           </div>
         </div>
       </div>
@@ -207,6 +210,23 @@
   
   
   <script>
+
+  var originalTextabout = document.getElementById('about_text').innerHTML;
+  var marathiTextabout = "<strong>मसुले रिअल एस्टेटमध्ये </strong> आपले स्वागत आहे, आपल्या घराच्या खरेदीचा स्वप्न साकार करण्यात आपला विश्वासू साथी आहे. मसुले, आपल्याला आपल्याचा घर केवळ एक संरचना नसतो; हा सुरक्षा आणि या जागेवर स्मृती तयार होतात, कुटुंब वाढतो आणि स्वप्न पावसांत उडतात.<br><br><strong>आमचे दृष्टिकोण</strong> : सर्वांसाठी घराची संपत्ती गुणवत्तेवर कोणत्याही कमी न करता असलेल्या सस्त्या गृहस्थांसाठी सावधानीपूर्वक घरांचे समाधान प्रस्तावित करून रिअल एस्टेट परिदृश्य पुन्हा निर्धारित करणे.";
+
+    var isMarathi = false;
+
+    function translateToMarathi() {
+        if (isMarathi) {
+            document.getElementById('about_text').innerHTML = originalTextabout;
+            isMarathi = false;
+        } else {
+            document.getElementById('about_text').innerHTML = marathiTextabout;
+            isMarathi = true;
+        }
+    }
+
+
     var slideIndex = 1;
   showSlides(slideIndex);
 
@@ -376,12 +396,12 @@
                 Know us better
               </h2>
             </div>
-            <p>
+            <p id="know_text">
             
               Welcome to Musale Estate, your trusted partner in the vibrant real estate market of Nashik! Located in the heart of this dynamic city, Musale Estate has been serving the community with integrity and excellence for 15 years. Specializing in residential, commercial, and industrial properties, Musale Estate offers a diverse portfolio to meet the unique needs of our clients. Our team of experienced professionals provides personalized guidance and support, ensuring a smooth and successful real estate journey.             </p>
-            <!-- <a href="">
-              Get A Quote
-            </a> -->
+            <a onclick="translateToMarathiknow()">
+              Marathi
+            </a>
           </div>
         </div>
         <div class="col-md-6">
@@ -397,6 +417,23 @@
       </div>
     </div>
   </section>
+  <script>
+       var originalTextknow = document.getElementById('know_text').innerHTML;
+  var marathiTextKnow = "नाशिकच्या जीवंत रिअल एस्टेट बाजारात आपले स्वागत आहे! ह्या नाशिकच्या दिलात स्थित, <Strong> मुसळे एस्टेटने </strong>15 वर्षांपासून सत्कार आणि प्रशंसा सहित समुदायास सेवा केली आहे. निवासीय, वाणिज्यिक आणि औद्योगिक संपत्त्यांतील विशेषज्ञता, <Strong> मुसळे एस्टेटने </strong>आमच्या ग्राहकांच्या विशिष्ट आवश्यकतांच्या परिपूर्ण निवेदनांसाठी एक विविध निवेदन प्रस्तुत केला आहे. आमच्या अनुभवी व्यावसायिकांचं संघ व्यक्तिमत्विक मार्गदर्शन आणि समर्थन प्रदान करतं, याचा अर्थ आपल्या रिअल एस्टेट प्रवासाच्या सुगम आणि सफळ बनविण्यात मदत करण्यास सुनिश्चित करतं.";
+
+    var isMarathi = false;
+
+    function translateToMarathiknow() {
+        if (isMarathi) {
+            document.getElementById('know_text').innerHTML = originalTextknow;
+            isMarathi = false;
+        } else {
+            document.getElementById('know_text').innerHTML = marathiTextKnow;
+            isMarathi = true;
+        }
+    }
+
+  </script>
 
   <!-- end deal section -->
 
