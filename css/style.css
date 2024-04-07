@@ -1243,3 +1243,29 @@ a:focus {
 }
 
 /* gudi */
+
+
+/* zoom in img */
+/* .img-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.box {
+  width: 48%;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.zoom-img {
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.box:hover .zoom-img {
+  transform: scale(1.1);
+} */
+
+/* end zoom in img */
