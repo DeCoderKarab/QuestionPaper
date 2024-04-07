@@ -51,8 +51,8 @@ body {
 .hero_area {
   position: relative;
   background-repeat: no-repeat;
-  background-position: top right;
-  background-size: 60% 100%;
+  background-position: top center;
+  background-size: cover;
   animation: slideshow 10s infinite;  /* 2 seconds per image, 3 images total */
 }
 
@@ -63,7 +63,40 @@ body {
   
 }
 
+/* continous colour changing effects */
+/* Keyframes for continuous color-changing effect */
+@keyframes colorChange {
+  0% { color: rgb(5, 5, 5); } /* Start color */
+  /* 50% { color: rgba(255, 0, 0, 1); }  
+  100% { color: rgb(25, 245, 5); }  */
+}
 
+/* Apply animation to the text */
+.color-changing-text {
+  animation: colorChange 5s infinite; /* Change color every 5 seconds */
+  color: white; /* Default text color */
+  text-shadow: 1px 1px 1px rgba(5, 234, 215, 0.5); /* Text shadow */
+  position: relative; /* Needed for pseudo-element */
+}
+
+/* Add semi-transparent black background to the text */
+.color-changing-text::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(49, 9, 227, 0.5); /* Semi-transparent black background */
+  z-index: -1; /* Place it behind the text */
+}
+
+/* Optionally, you can add animation for the span within the h1 */
+.color-changing-text span {
+  animation: colorChange 5s infinite alternate; /* Change color every 5 seconds, alternate direction */
+}
+
+/* end colour changing effects */
 .sub_page .hero_area {
   height: auto;
   background: none;
@@ -222,7 +255,7 @@ a:focus {
   display: block;
   width: 50px;
   height: 5px;
-  background-color: #101010;
+  background-color: #f9f6f6;
   margin: 6px 0;
   -webkit-transition: all .3s;
   transition: all .3s;
@@ -1146,3 +1179,67 @@ a:focus {
   transform: translateY(2px);
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
 }
+
+/* gudi image */
+.my-container {
+  position: relative;
+  text-align: center;
+}
+.my-thumbnail {
+  width: 300px; /* Default width */
+  height: 200px; /* Default height */
+  cursor: pointer;
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999;
+}
+
+/* Media query for screens smaller than 768px (typical mobile devices) */
+@media screen and (max-width: 768px) {
+  .my-thumbnail {
+      width: 80px; /* Adjust width for smaller screens */
+      height: auto; /* Maintain aspect ratio */
+  }
+}
+
+.my-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.my-modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.my-close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.my-close:hover,
+.my-close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* gudi */

@@ -78,25 +78,34 @@
     <section style="margin-left: 0%;"  class="slider_section ">
       <div   class="container-fluid">
         <div   class="row">
-          <div style="background-color: rgb(11, 112, 201);" class="col-md-4 offset-md-1">
+          <div  class="col-md-4 offset-md-1">
             <div  class="detail-box">
-              <h1 style="color: black;">
-                <span style="color: white;">Creator Of</span> <br>
+              <h1 class="color-changing-text">
+                <span >Creator Of</span> <br>
                 Your Dream <br>
-                House
+                Home
               </h1>
-              <p>
-                Unlock your dream home with our tailored real estate solutions.
+              <p >
+                <!-- Unlock your dream home with our <br> tailored real estate. -->
+                <br>
+                <br>
               </p>
               <div class="btn-box">
-                <!-- <a href="" class="">
-                  Read More
-                </a> -->
+                
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="my-container">
+        <img src="godi.png" alt="Image" class="my-thumbnail" onclick="openModal()">
+        <div class="my-modal" id="myModal">
+            <span class="my-close" onclick="closeModal()">&times;</span>
+            <img class="my-modal-content" id="img01">
+        </div>
+    </div>
+    
+      
     </section>
     <!-- end slider section -->
   </div>
@@ -791,7 +800,8 @@
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <script type="text/javascript" src="js/custom.js"></script>
-
+  
+  
 
 </body>
 
