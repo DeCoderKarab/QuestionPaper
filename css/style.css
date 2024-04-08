@@ -45,7 +45,35 @@ body {
   position: relative;
   border-left: 7px solid #0f2480;
   font-weight: bold;
+}.hero_area {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  animation: slideshow 10s infinite; /* 2 seconds per image, 3 images total */
 }
+
+@keyframes slideshow {
+  0% {
+    background-image: url(../images/bg-home.jpg);
+  }
+  50% {
+    background-image: url(../images/project-1.jpg);
+  }
+  100% {
+    background-image: url(../images/bg-home2.jpg);
+  }
+}
+
+/* Adjust background images for mobile screens */
+@media (max-width: 768px) {
+  .hero_area {
+    background-size: contain; /* Change background size to contain */
+  }
+}
+
+/* You may need further adjustments based on your specific requirements */
+
 
 /*header section*/
 .hero_area {
@@ -1186,12 +1214,12 @@ a:focus {
   text-align: center;
 }
 .my-thumbnail {
-  width: 300px; /* Default width */
+  width: 200px; /* Default width */
   height: 200px; /* Default height */
   cursor: pointer;
   position: fixed;
   right: 0;
-  top: 50%;
+  top: 80%;
   transform: translateY(-50%);
   z-index: 9999;
 }
@@ -1242,7 +1270,7 @@ a:focus {
   cursor: pointer;
 }
 
-/* gudi */
+/* end gudi */
 
 
 /* zoom in img */
