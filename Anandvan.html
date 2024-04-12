@@ -25,7 +25,7 @@
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
   <style>
-    .popup-container {
+    .popup-container,.popup-containerContact {
       display: none;
       position: fixed;
       top: 50%;
@@ -114,15 +114,14 @@
       <div class="row">
         <div class="col-md-6">
           <div class="img-box">
-            <div class="slider01">
+            <div class="slider">
               <img style="height: 400px; " src="images/Anandvan/image.png" alt="">
-              <img style="height: 400px; " src="images/interior.jpeg" alt="">
-              <img style="height: 400px; " src="images/interior2.jpg" alt="">
-              <img style="height: 400px;" src="images/interior3.jpg" alt="">
+              <img style="height: 400px; " src="images/Anandvan/image.png" alt="">
+              <img style="height: 400px; " src="images/Anandvan/image.png" alt="">
+              <img style="height: 400px;" src="images/Anandvan/image.png" alt="">
             </div>
             <button onclick="plusSlides1(-1)" class="prev">&#10094;</button>
             <button style="margin-right: 12px;" onclick="plusSlides1(1)" class="next">&#10095;</button>
-            
           </div>
         </div>
         <div class="col-md-6">
@@ -192,7 +191,7 @@
             <br>
             <strong id="showDetails" style="cursor: pointer; color: red;">Milan Borsaniya</strong>
             <br>
-            <a id="showDetails"  href="tel:+918888881716">Contact</a>
+            <a id="showDetailsContact" >Contact</a>
             <video  style="width: 1%;" id="myVideo1" src="images/video.mp4"></video>
             <br>
             <!-- <a style="margin-top: 50px;" href="tel:+919890531862">Contact</a> -->
@@ -207,6 +206,10 @@
   </div>
   <div id="popupContainer" class="popup-container">
     <span class="close-button" onclick="closePopup()">&times;</span>
+    <iframe src="Nikhil.html" frameborder="0" style="width: 100%; height: calc(100% - 30px);"></iframe>
+  </div>
+  <div id="popupContainerContact" class="popup-container">
+    <span class="close-button" onclick="closePopupCon()">&times;</span>
     <iframe src="Nikhil.html" frameborder="0" style="width: 100%; height: calc(100% - 30px);"></iframe>
   </div>
   </section>
@@ -339,6 +342,14 @@ document.getElementById("showDetails1").addEventListener("click", function() {
 function closePopup1() {
   document.getElementById("popupContainer1").style.display = "none";
 }
+document.getElementById("showDetailsContact").addEventListener("click", function() {
+  var popupContainer = document.getElementById("popupContainerContact");
+  popupContainer.style.display = "block";
+});
+function closePopupCon() {
+  document.getElementById("popupContainerContact").style.display = "none";
+}
+
 
   // site supervisor details
 
