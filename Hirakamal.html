@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>real estate</title>
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Raleway:400,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+  <style>
+    .popup-container {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      height: 300px;
+      overflow: auto;
+      background-color: white;
+      border: 2px solid #333;
+      border-radius: 5px;
+      z-index: 9999; /* Ensure popup is on top */
+    }
+    
+    .close-button {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      cursor: pointer;
+      color: red;
+      font-size: 50px; /* Adjust the font size as needed */
+    }
+    </style>
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <img style="background-color: white;" src="images/logo1.png" alt="" />
+          </a>
+          <div class="navbar-collapse" id="">
+            <ul class="navbar-nav justify-content-between ">
+              <!-- <div class="User_option">
+                <li class="">
+                  <a class="mr-4" href="">
+                    Login
+                  </a>
+                  <a class="" href="">
+                    Sign up
+                  </a>
+                </li>
+              </div> -->
+            </ul>
+
+            <div class="custom_menu-btn">
+              <button onclick="openNav()">
+                <span class="s-1">
+
+                </span>
+                <span class="s-2">
+
+                </span>
+                <span class="s-3">
+
+                </span>
+              </button>
+            </div>
+            <div id="myNav" class="overlay">
+              <div class="overlay-content">
+                <a href="index.html">HOME</a>
+                <a href="about.html">ABOUT</a>
+                <a href="house.html">HOUSE</a>
+                <!-- <a href="price.html">PRICING</a> -->
+                <a href="contact.html">CONTACT US</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+
+  <!-- about section -->
+  <section id="2bhk" style="display: none;" class="about_section layout_padding-bottom">
+
+    <div class="maincontainer">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="img-box">
+            <div class="slider">
+              <img style="height: 400px; " src="images/Hirakamal/site plan.jpg" alt="">
+              <img style="height: 400px; " src="images/interior.jpeg" alt="">
+              <img style="height: 400px; " src="images/interior2.jpg" alt="">
+              <img style="height: 400px;" src="images/interior3.jpg" alt="">
+            </div>
+            <button onclick="plusSlides(-1)" class="prev">&#10094;</button>
+            <button style="margin-right: 12px;" onclick="plusSlides(1)" class="next">&#10095;</button>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div style="margin-top: -20px;" class="heading_container">
+              <img style="width: 4%;margin-left: 40px;" src="images/location1.png" alt="">
+              <h2>Hirakamal</h2>
+            </div>
+            <br>
+            <h6>SPECIFICATION<span style="color: rgb(231, 239, 20);"></span></h6>
+            <strong> <img style="width: 5%; margin-top: -10px;" src="images/bath.png" alt=""> 1Bath &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 2Bed &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 1KITCHENT</strong>
+            <h1> </h1>
+            <h6>Area<span style="color: rgb(234, 241, 18);"></span></h6>
+            <strong> <img style="width: 5%; margin-top: -10px;" src="images/measure.png" alt=""> 800sqft</strong>
+            <h1> </h1>
+            <h6>Address<span style="color: rgb(234, 241, 18);"></span></h6>
+            <strong> &nbsp;&nbsp;&nbsp;  nandur village krushi nagar behind Samruddhi lawns </strong>
+            <br>
+            <a style="margin-top: 50px;" href="tel:8080942285">Contact</a>
+            &nbsp;&nbsp;&nbsp;
+            <a id="fullscreenButton1" href="#" class="fullscreen-button">Get A Virtual Tour</a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h1> </h1>
+  <!-- </section>
+
+  
+
+  <section class="about_section layout_padding-bottom"> -->
+    
+    <div  class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="img-box">
+            <div style="height: 300px;width: 380px;" class="slider">
+              <iframe  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3748.9427661750938!2d73.83817507500257!3d20.010916681395827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDAwJzM5LjMiTiA3M8KwNTAnMjYuNyJF!5e0!3m2!1sen!2sin!4v1712745760469!5m2!1sen!2sin" width="600" height="600" frameborder="0" style="border:0; width: 100%; height:100%" allowfullscreen></iframe>
+            </div>
+            
+            
+          </div>
+        </div>
+        <div  class="col-md-6">
+          <div style="margin-left: 40px;" class="detail-box">
+            <div  class="heading_container">
+              <!-- <img style="width: 4%;margin-left: 40px;" src="images/location1.png" alt=""> -->
+              <h2>More Details</h2>
+            </div>
+            <br>
+            <h6>Landmarks<span style="color: rgb(231, 239, 20);"></span></h6>
+            <strong>Hirakamal Road</strong>
+            <h1> </h1>
+            <h6>Furnishing<span style="color: rgb(234, 241, 18);"></span></h6>
+            <strong>Furnished </strong>
+            <h1> </h1>
+            <h6>Age of Construction<span style="color: rgb(234, 241, 18);"></span></h6>
+            <strong> Ready Position</strong>
+            <br>
+            &nbsp;&nbsp;&nbsp;
+            
+            <h6>Site Superviser<span style="color: rgb(234, 241, 18);"></span></h6>
+            
+            <strong id="showDetails" style="cursor: pointer; color: red;">Darshan Sonawane</strong>
+            <br>
+            <a id="showDetails"  href="tel:+919890531862">Contact</a>
+            <video  style="width: 1%;" id="myVideo1" src="images/video.mp4"></video>
+            <br>
+            <!-- <a style="margin-top: 50px;" href="tel:+919890531862">Contact</a> -->
+            
+          </div>
+          <button style="margin-top: 50px; margin-left: 20px;" class="back button" onclick="window.location.href='index.html';">&#8592; Back </button>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div id="popupContainer" class="popup-container">
+    <span class="close-button" onclick="closePopup()">&times;</span>
+    <iframe src="Darshan.html" frameborder="0" style="width: 100%; height: calc(100% - 30px);"></iframe>
+  </div>
+  </section>
+<!-- end about section -->
+
+
+
+
+<!-- second property section -->
+<section id="3bhk" style="display: none;" class="about_section layout_padding-bottom">
+
+  <div class="maincontainer">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="img-box">
+          <div class="slider">
+            <img style="height: 400px; " src="images/Hirakamal/site plan.jpg" alt="">
+            <img style="height: 400px; " src="images/Hirakamal/site plan.jpg" alt="">
+            <img style="height: 400px; " src="images/Hirakamal/site plan.jpg" alt="">
+            <img style="height: 400px;" src="images/Hirakamal/site plan.jpg" alt="">
+          </div>
+          <button onclick="plusSlides1(-1)" class="prev">&#10094;</button>
+          <button style="margin-right: 12px;" onclick="plusSlides1(1)" class="next">&#10095;</button>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="detail-box">
+          <div style="margin-top: -20px;" class="heading_container">
+            <img style="width: 4%;margin-left: 40px;" src="images/location1.png" alt="">
+            <h2>Hirakamal</h2>
+          </div>
+          <br>
+          <h6>SPECIFICATION<span style="color: rgb(231, 239, 20);"></span></h6>
+          <strong> <img style="width: 5%; margin-top: -10px;" src="images/bath.png" alt=""> 1Bath &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 3Bed &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 1KITCHENT</strong>
+          <h1> </h1>
+          <h6>Area<span style="color: rgb(234, 241, 18);"></span></h6>
+          <strong> <img style="width: 5%; margin-top: -10px;" src="images/measure.png" alt=""> 1200sqft</strong>
+          <h1> </h1>
+          <h6>Address<span style="color: rgb(234, 241, 18);"></span></h6>
+          <strong> &nbsp;&nbsp;&nbsp;  nandur village krushi nagar behind Samruddhi lawns</strong>
+          <br>
+          <a style="margin-top: 50px;" href="tel:8080942285">Contact</a>
+          &nbsp;&nbsp;&nbsp;
+          <a id="fullscreenButton2" href="#" class="fullscreen-button">Get A Virtual Tour</a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h1> </h1>
+<!-- </section>
+
+
+
+<section class="about_section layout_padding-bottom"> -->
+  
+  <div  class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="img-box">
+          <div style="height: 300px;width: 380px;" class="slider">
+            <iframe  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3748.9427661750938!2d73.83817507500257!3d20.010916681395827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDAwJzM5LjMiTiA3M8KwNTAnMjYuNyJF!5e0!3m2!1sen!2sin!4v1712745760469!5m2!1sen!2sin" width="600" height="600" frameborder="0" style="border:0; width: 100%; height:100%" allowfullscreen></iframe>
+          </div>
+          
+          
+        </div>
+      </div>
+      <div  class="col-md-6">
+        <div style="margin-left: 40px;" class="detail-box">
+          <div  class="heading_container">
+            <!-- <img style="width: 4%;margin-left: 40px;" src="images/location1.png" alt=""> -->
+            <h2>More Details</h2>
+          </div>
+          <br>
+          <h6>Landmarks<span style="color: rgb(231, 239, 20);"></span></h6>
+          <strong>Hirakamal Road </strong>
+          <h1> </h1>
+          <h6>Furnishing<span style="color: rgb(234, 241, 18);"></span></h6>
+          <strong>Furnished </strong>
+          <h1> </h1>
+          <h6>Status<span style="color: rgb(234, 241, 18);"></span></h6>
+          <strong>Ready Position</strong>
+          <br>
+          &nbsp;&nbsp;&nbsp;
+          
+          <h6>Site Superviser<span style="color: rgb(234, 241, 18);"></span></h6>
+          
+          <strong id="showDetails1" style="cursor: pointer; color: red;">Darshan Sonawane</strong>
+          <br>
+          <a id="showDetails1" style="cursor: pointer; color: red;">Contact</a>
+          <video  style="width: 1%;" id="myVideo2" src="images/video.mp4"></video>
+          <br>
+          <!-- <a style="margin-top: 50px;" href="tel:+919890531862">Contact</a> -->
+          
+        </div>
+        <button style="margin-top: 50px; margin-left: 20px;" class="back button" onclick="window.location.href='index.html';">&#8592; Back </button>
+
+      </div>
+    </div>
+  </div>
+  <div id="popupContainer1" class="popup-container">
+    <span class="close-button" onclick="closePopup1()">&times;</span>
+    <iframe src="Darshan.html" frameborder="0" style="width: 100%; height: calc(100% - 30px);"></iframe>
+  </div>
+
+</div>
+</section>  
+<!-- end second property section  -->
+  <!--  -->
+  <script>
+     // site supervisor details
+  document.getElementById("showDetails").addEventListener("click", function() {
+  var popupContainer = document.getElementById("popupContainer");
+  popupContainer.style.display = "block";
+});
+function closePopup() {
+  document.getElementById("popupContainer").style.display = "none";
+}
+
+document.getElementById("showDetails1").addEventListener("click", function() {
+  var popupContainer = document.getElementById("popupContainer1");
+  popupContainer.style.display = "block";
+});
+function closePopup1() {
+  document.getElementById("popupContainer1").style.display = "none";
+}
+
+  // site supervisor details
+
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const fullscreenButton1 = document.getElementById('fullscreenButton1');
+      const video1 = document.getElementById('myVideo1');
+      fullscreenButton1.addEventListener('click', function (event) {
+        event.preventDefault();
+        if (video1.requestFullscreen) {
+          video1.requestFullscreen();
+        } else if (video1.mozRequestFullScreen) {
+          video1.mozRequestFullScreen();
+        } else if (video1.webkitRequestFullscreen) {
+          video1.webkitRequestFullscreen();
+        } else if (video1.msRequestFullscreen) {
+          video1.msRequestFullscreen();
+        }
+      });
+
+      const fullscreenButton2 = document.getElementById('fullscreenButton2');
+      const video2 = document.getElementById('myVideo2');
+      fullscreenButton2.addEventListener('click', function (event) {
+        event.preventDefault();
+        if (video2.requestFullscreen) {
+          video2.requestFullscreen();
+        } else if (video2.mozRequestFullScreen) {
+          video2.mozRequestFullScreen();
+        } else if (video2.webkitRequestFullscreen) {
+          video2.webkitRequestFullscreen();
+        } else if (video2.msRequestFullscreen) {
+          video2.msRequestFullscreen();
+        }
+      });
+    });
+  </script>
+<!-- slider -->
+<!-- script of slider -->
+<!-- <script>
+  var slideIndex1 = 0;
+  showSlides1();
+
+  function plusSlides1(n) {
+    showSlides1(slideIndex1 += n);
+  }
+
+  function currentSlide1(n) {
+    showSlides1(slideIndex1 = n);
+  }
+
+  function showSlides1() {
+    var i;
+    var slides = document.getElementsByClassName("slider1")[0].getElementsByTagName("img");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex1++;
+    if (slideIndex1 > slides.length) {slideIndex1 = 1}
+    slides[slideIndex1-1].style.display = "block";
+    setTimeout(showSlides1, 2000); // Change image every 2 seconds
+  }
+</script> -->
+<!-- end script of slider -->
+
+<!-- slider -->
+<!-- <button onclick="plusSlides(-1)" class="prev">&#10094;</button>
+<button style="margin-right: 12px;" onclick="plusSlides(1)" class="next">&#10095;</button> -->
+
+<!-- script of slider -->
+<!-- <script>
+  var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides1(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("slider")[0].getElementsByTagName("img");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+}
+</script> -->
+  <!-- virtual tour -->
+
+  <!--  -->
+  
+  
+  <script>
+    
+    var slideIndex1 = 1;
+    showSlides(slideIndex1);
+
+    function plusSlides(n) {
+        showSlides(slideIndex1 += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex1 = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("slider")[0].getElementsByTagName("img");
+        if (n > slides.length) {slideIndex1 = 1}
+        if (n < 1) {slideIndex1 = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex1-1].style.display = "block";
+    }
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides1(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("slider2")[0].getElementsByTagName("img");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex-1].style.display = "block";
+    }
+</script>
+  <!-- end about section -->
+
+
+    <!-- select section  -->
+
+    <script>
+        // JavaScript code to determine which section to display
+        var urlParams = new URLSearchParams(window.location.search);
+        var category = urlParams.get('category');
+        
+        if (category === '1BHK') {
+            document.getElementById('1bhk').style.display = 'block';
+        } else if (category === '2BHK') {
+            document.getElementById('2bhk').style.display = 'block';
+        } else if (category === '3BHK') {
+            document.getElementById('3bhk').style.display = 'block';
+        }
+    </script>
+
+    <!-- end select section  -->
+<!-- info section -->
+<section style="background-color: black;"  class="info_section ">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="info_contact">
+          <h5>
+            About 
+          </h5>
+          <div>
+            <div class="img-box">
+              <img src="images/location.png" width="18px" alt="">
+            </div>
+            <p>
+              India
+            </p>
+          </div>
+          <div>
+            <div class="img-box">
+              <img src="images/phone.png" width="12px" alt="">
+            </div>
+            <p >
+              <a style="color: white;" href="tel:919890531862">
+                +91 9890531862
+              </a>
+              
+            </p>
+          </div>
+          <div>
+            <div  class="img-box">
+              <img src="images/mail.png" width="18px" alt="">
+            </div>
+            <p   >
+              <a style="color: white;" href="mailto:suryawanshik207@gmail.com">
+                demo@gmail.com
+              </a>
+              
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="info_info">
+          <h5>
+            Information
+          </h5>
+          <p>
+            Musale Estate: Crafting dream homes into reality. With a passion for excellence, we sculpt exquisite dwellings that redefine luxury living
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="info_links">
+          <h5>
+            Useful Link
+          </h5>
+          <ul>
+            <li>
+              <a style="color: rgb(22, 238, 242);" href="Properti.html">
+                Balaji Park
+              </a>
+            </li>
+            <h1> </h1>
+            <li>
+              <a style="color: rgb(22, 238, 242);" href="Properti.html">
+                Balaji Estate
+              </a>
+            </li>
+            <h1> </h1>
+            <li>
+              <a style="color: rgb(22, 238, 242);" href="Properti.html">
+                Patil park
+              </a>
+            </li>
+            <h1> </h1>
+            <li>
+              <a style="color: rgb(22, 238, 242);" href="Properti.html">
+                Ashok Nagar
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="info_form ">
+          
+          <div class="social_box">
+            <a href="https://www.facebook.com/p/Musale-Borsaniya-LLP-100066856957841/">
+              <img style="width: 30%;" src="images/fb1.png" alt="">
+            </a>
+            <!-- <a href="">
+              <img src="images/twitter.png" alt="">
+            </a> -->
+            <a href="https://www.instagram.com/musaleborsaniyallp/">
+              <img style="width: 30%;" src="images/instagram.png" alt="">
+            </a>
+            <!-- <a href="">
+              <img src="images/youtube.png" alt="">
+            </a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- end info_section -->
+
+
+<!-- footer section -->
+<section style="background-color: black;" class="container-fluid footer_section ">
+  <div class="container">
+    <p>
+      &copy; <span id="displayYear"></span> All Rights Reserved. Design By
+      <a href="">Karan Suryawanshi</a>
+    </p>
+  </div>
+</section>
+<!-- end  footer section -->
+
+
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="js/custom.js"></script>
+
+</body>
+</body>
+
+</html>
