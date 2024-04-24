@@ -117,12 +117,12 @@
           <div class="img-box">
             <div class="slider">
               <img style="height: 400px; " src="images/Hirakamal/site plan.jpg" alt="">
-              <img style="height: 400px; " src="images/interior.jpeg" alt="">
-              <img style="height: 400px; " src="images/interior2.jpg" alt="">
-              <img style="height: 400px;" src="images/interior3.jpg" alt="">
+              <!-- <img style="height: 400px; " src="images/Hirakamal/" alt=""> -->
+              <img style="height: 400px; " src="images/Anandvan/siteImage3.png" alt="">
+              <img style="height: 400px;" src="images/Anandvan/siteImage5.png" alt=""> 
             </div>
-            <button onclick="plusSlides(-1)" class="prev">&#10094;</button>
-            <button  onclick="plusSlides(1)" class="next">&#10095;</button>
+            <button onclick="plusSlides(-1, 0)" class="prev">&#10094;</button>
+            <button onclick="plusSlides(1, 0)" class="next">&#10095;</button>
           </div>
         </div>
         <div class="col-md-6">
@@ -133,7 +133,7 @@
             </div>
             <br>
             <h6>SPECIFICATION<span style="color: rgb(231, 239, 20);"></span></h6>
-            <strong> <img style="width: 5%; margin-top: -10px;" src="images/bath.png" alt=""> 1Bath &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 2Bed &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 1KITCHEN</strong>
+            <strong> <img style="width: 5%; margin-top: -10px;" src="images/bath.png" alt=""> 1Bath &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 2-3Bed &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/specs/kit2.png" alt=""> 1KITCHEN</strong>
             <h1> </h1>
             <h6>Area<span style="color: rgb(234, 241, 18);"></span></h6>
             <strong> <img style="width: 5%; margin-top: -10px;" src="images/measure.png" alt=""> 800sqft</strong>
@@ -143,7 +143,7 @@
             <br>
             <a style="margin-top: 50px;" href="tel:8080942285">Contact</a>
             &nbsp;&nbsp;&nbsp;
-            <a id="fullscreenButton1" href="#" class="fullscreen-button">Get A Virtual Tour</a>
+            <a id="fullscreenButton1" href="#" class="fullscreen-button">inquiry</a>
             
           </div>
         </div>
@@ -151,11 +151,7 @@
     </div>
 
     <h1> </h1>
-  <!-- </section>
-
   
-
-  <section class="about_section layout_padding-bottom"> -->
     
     <div  class="container">
       <div class="row">
@@ -178,13 +174,10 @@
             <h6>Landmarks<span style="color: rgb(231, 239, 20);"></span></h6>
             <strong>Hirakamal Road</strong>
             <h1> </h1>
-            <h6>Furnishing<span style="color: rgb(234, 241, 18);"></span></h6>
-            <strong>Furnished </strong>
+            <h6>Price<span style="color: rgb(234, 241, 18);"></span></h6>
+            <strong>Lakhs</strong>
             <h1> </h1>
-            <h6>Age of Construction<span style="color: rgb(234, 241, 18);"></span></h6>
-            <strong> Ready Position</strong>
-            <br>
-            &nbsp;&nbsp;&nbsp;
+            
             
             <h6>Site Superviser<span style="color: rgb(234, 241, 18);"></span></h6>
             
@@ -207,6 +200,31 @@
     <span class="close-button" onclick="closePopup()">&times;</span>
     <iframe src="Darshan.html" frameborder="0" style="width: 100%; height: calc(100% - 30px);"></iframe>
   </div>
+  <script>
+
+    var slideIndex = 1;
+        showSlides(slideIndex);
+    
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+    
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+    
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("slider")[0].getElementsByTagName("img");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slides[slideIndex-1].style.display = "block";  
+        }
+    </script>
+  
   </section>
 <!-- end about section -->
 
@@ -214,7 +232,7 @@
 
 
 <!-- second property section -->
-<section  class="about_section layout_padding-bottom">
+<!-- <section  class="about_section layout_padding-bottom">
 
   <div class="maincontainer">
 
@@ -224,12 +242,12 @@
         <div class="img-box">
           <div class="slider">
             <img style="height: 400px; " src="images/Hirakamal/site plan.jpg" alt="">
-            <img style="height: 400px; " src="images/Hirakamal/site plan.jpg" alt="">
-            <img style="height: 400px; " src="images/Hirakamal/site plan.jpg" alt="">
-            <img style="height: 400px;" src="images/Hirakamal/site plan.jpg" alt="">
+            <img style="height: 400px; " src="images/Anandvan/siteImage2.png" alt="">
+            <img style="height: 400px; " src="images/Anandvan/siteImage3.png" alt="">
+            <img style="height: 400px;" src="images/Anandvan/siteImage5.png" alt=""> 
           </div>
-          <button onclick="plusSlides1(-1)" class="prev">&#10094;</button>
-          <button  onclick="plusSlides1(1)" class="next">&#10095;</button>
+          <button onclick="plusSlides(-1, 0)" class="prev">&#10094;</button>
+          <button onclick="plusSlides(1, 0)" class="next">&#10095;</button>
         </div>
       </div>
       <div class="col-md-6">
@@ -258,11 +276,7 @@
   </div>
 
   <h1> </h1>
-<!-- </section>
 
-
-
-<section class="about_section layout_padding-bottom"> -->
   
   <div  class="container">
     <div class="row">
@@ -278,20 +292,15 @@
       <div  class="col-md-6">
         <div style="margin-left: 40px;" class="detail-box">
           <div  class="heading_container">
-            <!-- <img style="width: 4%;margin-left: 40px;" src="images/location1.png" alt=""> -->
             <h2>More Details</h2>
           </div>
           <br>
           <h6>Landmarks<span style="color: rgb(231, 239, 20);"></span></h6>
-          <strong>Hirakamal Road </strong>
+          <strong>Behind Samruddhi lawns</strong>
           <h1> </h1>
-          <h6>Furnishing<span style="color: rgb(234, 241, 18);"></span></h6>
-          <strong>Furnished </strong>
-          <h1> </h1>
-          <h6>Status<span style="color: rgb(234, 241, 18);"></span></h6>
-          <strong>Ready Position</strong>
-          <br>
-          &nbsp;&nbsp;&nbsp;
+          <h6>Price<span style="color: rgb(234, 241, 18);"></span></h6>
+          <strong>Lakhs</strong>
+         <h1></h1>
           
           <h6>Site Superviser<span style="color: rgb(234, 241, 18);"></span></h6>
           
@@ -302,7 +311,6 @@
           <button style="margin-top: 50px; margin-left: 20px;" class="back button" onclick="window.location.href='index.html';">&#8592; Back </button>
 
           <br>
-          <!-- <a style="margin-top: 50px;" href="tel:+919890531862">Contact</a> -->
           
         </div>
 
@@ -315,7 +323,31 @@
   </div>
 
 </div>
-</section>  
+<script>
+
+  var slideIndex = 1;
+      showSlides(slideIndex);
+  
+      function plusSlides(n) {
+          showSlides(slideIndex += n);
+      }
+  
+      function currentSlide(n) {
+          showSlides(slideIndex = n);
+      }
+  
+      function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("slider")[0].getElementsByTagName("img");
+          if (n > slides.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";  
+          }
+          slides[slideIndex-1].style.display = "block";  
+      }
+  </script>
+</section>   -->
 <!-- end second property section  -->
   <!--  -->
   <script>
@@ -372,114 +404,6 @@ function closePopup1() {
       });
     });
   </script>
-<!-- slider -->
-<!-- script of slider -->
-<!-- <script>
-  var slideIndex1 = 0;
-  showSlides1();
-
-  function plusSlides1(n) {
-    showSlides1(slideIndex1 += n);
-  }
-
-  function currentSlide1(n) {
-    showSlides1(slideIndex1 = n);
-  }
-
-  function showSlides1() {
-    var i;
-    var slides = document.getElementsByClassName("slider1")[0].getElementsByTagName("img");
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    slideIndex1++;
-    if (slideIndex1 > slides.length) {slideIndex1 = 1}
-    slides[slideIndex1-1].style.display = "block";
-    setTimeout(showSlides1, 2000); // Change image every 2 seconds
-  }
-</script> -->
-<!-- end script of slider -->
-
-<!-- slider -->
-<!-- <button onclick="plusSlides(-1)" class="prev">&#10094;</button>
-<button style="margin-right: 12px;" onclick="plusSlides(1)" class="next">&#10095;</button> -->
-
-<!-- script of slider -->
-<!-- <script>
-  var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides1(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("slider")[0].getElementsByTagName("img");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  slides[slideIndex-1].style.display = "block";
-}
-</script> -->
-  <!-- virtual tour -->
-
-  <!--  -->
-  
-  
-  <script>
-    
-    var slideIndex1 = 1;
-    showSlides(slideIndex1);
-
-    function plusSlides(n) {
-        showSlides(slideIndex1 += n);
-    }
-
-    function currentSlide(n) {
-        showSlides(slideIndex1 = n);
-    }
-
-    function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("slider")[0].getElementsByTagName("img");
-        if (n > slides.length) {slideIndex1 = 1}
-        if (n < 1) {slideIndex1 = slides.length}
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        slides[slideIndex1-1].style.display = "block";
-    }
-
-    var slideIndex = 1;
-    showSlides(slideIndex);
-
-    function plusSlides1(n) {
-        showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("slider2")[0].getElementsByTagName("img");
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        slides[slideIndex-1].style.display = "block";
-    }
-</script>
-
 <!-- info section -->
 <section style="background-color: black;"  class="info_section ">
   <div class="container">

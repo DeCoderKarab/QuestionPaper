@@ -115,12 +115,12 @@
           <div class="img-box">
             <div class="slider">
               <img style="height: 400px; " src="images/Anandvan/image.png" alt="">
-              <img style="height: 400px; " src="images/Anandvan/image.png" alt="">
-              <img style="height: 400px; " src="images/Anandvan/image.png" alt="">
-              <img style="height: 400px;" src="images/Anandvan/image.png" alt="">
+              <img style="height: 400px; " src="images/Anandvan/siteImage2.png" alt="">
+              <img style="height: 400px; " src="images/Anandvan/siteImage3.png" alt="">
+              <img style="height: 400px;" src="images/Anandvan/siteImage5.png" alt=""> 
             </div>
-            <button onclick="plusSlides1(-1)" class="prev">&#10094;</button>
-            <button  onclick="plusSlides1(1)" class="next">&#10095;</button>
+            <button onclick="plusSlides(-1, 0)" class="prev">&#10094;</button>
+            <button onclick="plusSlides(1, 0)" class="next">&#10095;</button>
           </div>
         </div>
         <div class="col-md-6">
@@ -131,10 +131,10 @@
             </div>
             <br>
             <h6>SPECIFICATION<span style="color: rgb(231, 239, 20);"></span></h6>
-            <strong> <img style="width: 5%; margin-top: -10px;" src="images/bath.png" alt=""> 1Bath &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 2Bed &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 1KITCHEN</strong>
+            <strong> <img style="width: 5%; margin-top: -10px;" src="images/bath.png" alt=""> 1Bath &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 2-3Bed &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/specs/kit2.png" alt=""> 1KITCHEN</strong>
             <h1> </h1>
             <h6>Area<span style="color: rgb(234, 241, 18);"></span></h6>
-            <strong> <img style="width: 5%; margin-top: -10px;" src="images/measure.png" alt=""> 800sqft</strong>
+            <strong> <img style="width: 5%; margin-top: -10px;" src="images/measure.png" alt=""> 800 - 1400sqft</strong>
             <h1> </h1>
             <h6>Address<span style="color: rgb(234, 241, 18);"></span></h6>
             <strong> &nbsp;&nbsp;&nbsp;  S No- 156/2B, Anandvan, Near Rose Bakery, Lamkhede Mala, Tarwala Nagar, Panchavati, Nashik - 422004 </strong>
@@ -174,21 +174,21 @@
             </div>
             <br>
             <h6>Landmarks<span style="color: rgb(231, 239, 20);"></span></h6>
-            <strong>Near Rose Bakery</strong>
+            <strong>Rose Bakery</strong>
             <h1> </h1>
-            <h6>Furnishing<span style="color: rgb(234, 241, 18);"></span></h6>
-            <strong>Furnished </strong>
+            <h6>Price<span style="color: rgb(234, 241, 18);"></span></h6>
+            <strong>Lakhs </strong>
             <h1> </h1>
-            <h6>Age of Construction<span style="color: rgb(234, 241, 18);"></span></h6>
-            <strong> Ready Position</strong>
-            <br>
+            
             &nbsp;&nbsp;&nbsp;
             
             <h6>Site Superviser<span style="color: rgb(234, 241, 18);"></span></h6>
-            
-            <strong id="showDetails" style="cursor: pointer; color: red;">Nikhil Sonaje</strong>
-            <br>
+
             <strong id="showDetails" style="cursor: pointer; color: red;">Milan Borsaniya</strong>
+            <br>
+            <strong id="showDetails" style="cursor: pointer; color: red;">Nikhil Sonaje</strong>
+            
+            
             <br>
             <a id="showDetailsContact" >Contact</a>
             <video  style="width: 1%;" id="myVideo1" src="images/video.mp4"></video>
@@ -206,21 +206,46 @@
   </div>
   <div id="popupContainer" class="popup-container">
     <span class="close-button" onclick="closePopup()">&times;</span>
-    <iframe src="Nikhil.html" frameborder="0" style="width: 100%; height: calc(100% - 30px);"></iframe>
+    <iframe src="milan.html" frameborder="0" style="width: 100%; height: calc(100% - 30px);"></iframe>
   </div>
   <div id="popupContainerContact" class="popup-container">
-    <span class="close-button" onclick="closePopupCon()">&times;</span>
-    <iframe src="Nikhil.html" frameborder="0" style="width: 100%; height: calc(100% - 30px);"></iframe>
+    <span class="close-button1" onclick="closePopup2()">&times;</span>
+    <iframe src="nikhil.html" frameborder="0" style="width: 100%; height: calc(100% - 30px);"></iframe>
   </div>
+  <script>
+
+    var slideIndex = 1;
+        showSlides(slideIndex);
+    
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+    
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+    
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("slider")[0].getElementsByTagName("img");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slides[slideIndex-1].style.display = "block";  
+        }
+    </script>
   </section>
 <!-- end about section -->
 
 <div style="border-top: 1px solid black;"></div>
 
+<!-- 8888881716 -->
 
 
 <!-- second property section -->
-<section  style="display: block;" class="about_section layout_padding-bottom">
+<!-- <section  style="display: block;" class="about_section layout_padding-bottom">
 
   <div class="maincontainer">
 
@@ -229,13 +254,13 @@
       <div class="col-md-6">
         <div class="img-box">
           <div class="slider">
+            <img style="height: 400px; " src="images/Anandvan/image.png" alt="">
             <img style="height: 400px; " src="images/Anandvan/siteImage2.png" alt="">
-            <img style="height: 400px; " src="images/Anandvan/image.png" alt="">
-            <img style="height: 400px; " src="images/Anandvan/image.png" alt="">
-            <img style="height: 400px;" src="images/Anandvan/image.png" alt="">
+            <img style="height: 400px; " src="images/Anandvan/siteImage3.png" alt="">
+            <img style="height: 400px;" src="images/Anandvan/siteImage5.png" alt=""> 
           </div>
-          <button onclick="plusSlides1(-1)" class="prev">&#10094;</button>
-          <button  onclick="plusSlides1(1)" class="next">&#10095;</button>
+          <button onclick="plusSlides(-1, 0)" class="prev">&#10094;</button>
+          <button onclick="plusSlides(1, 0)" class="next">&#10095;</button>
         </div>
       </div>
       <div class="col-md-6">
@@ -246,7 +271,7 @@
           </div>
           <br>
           <h6>SPECIFICATION<span style="color: rgb(231, 239, 20);"></span></h6>
-          <strong> <img style="width: 5%; margin-top: -10px;" src="images/bath.png" alt=""> 1Bath &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 3Bed &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 1KITCHEN</strong>
+          <strong> <img style="width: 5%; margin-top: -10px;" src="images/bath.png" alt=""> 1Bath &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 3Bed &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/specs/kit2.png" alt=""> 1KITCHEN</strong>
           <h1> </h1>
           <h6>Area<span style="color: rgb(234, 241, 18);"></span></h6>
           <strong> <img style="width: 5%; margin-top: -10px;" src="images/measure.png" alt=""> 1200sqft</strong>
@@ -265,11 +290,7 @@
   </div>
 
   <h1> </h1>
-<!-- </section>
 
-
-
-<section class="about_section layout_padding-bottom"> -->
   
   <div  class="container">
     <div class="row">
@@ -286,15 +307,15 @@
       <div  class="col-md-6">
         <div style="margin-left: 40px;" class="detail-box">
           <div  class="heading_container">
-            <!-- <img style="width: 4%;margin-left: 40px;" src="images/location1.png" alt=""> -->
+            
             <h2>More Details</h2>
           </div>
           <br>
           <h6>Landmarks<span style="color: rgb(231, 239, 20);"></span></h6>
           <strong>Near Rose Bakery</strong>
           <h1> </h1>
-          <h6>Furnishing<span style="color: rgb(234, 241, 18);"></span></h6>
-          <strong>Furnished </strong>
+          <h6>Price<span style="color: rgb(234, 241, 18);"></span></h6>
+          <strong>Lakhs</strong>
           <h1> </h1>
           <h6>Status<span style="color: rgb(234, 241, 18);"></span></h6>
           <strong>Ready Position</strong>
@@ -302,17 +323,16 @@
           &nbsp;&nbsp;&nbsp;
           
           <h6>Site Superviser<span style="color: rgb(234, 241, 18);"></span></h6>
-          
-          <strong id="showDetails1" style="cursor: pointer; color: red;">Nikhil Sonaje</strong>
-          <br>
           <strong id="showDetails1" style="cursor: pointer; color: red;">Milan Borsaniya</strong>
+          <br>
+          <strong id="showDetails1" style="cursor: pointer; color: red;">Nikhil Sonaje</strong>
           <br>
           <a id="showDetailsContact1" style="cursor: pointer; color: red;">Contact</a>
           <video  style="width: 1%;" id="myVideo2" src="images/video.mp4"></video>
           <button style="margin-top: 50px; margin-left: 20px;" class="back button" onclick="window.location.href='index.html';">&#8592; Back </button>
 
           <br>
-          <!-- <a style="margin-top: 50px;" href="tel:+919890531862">Contact</a> -->
+         
           
           
         </div>
@@ -325,7 +345,7 @@
     <iframe src="Nikhil.html" frameborder="0" style="width: 100%; height: calc(100% - 30px);"></iframe>
   </div>
   
-</section>  
+</section>   -->
 <!-- end second property section  -->
   <!--  -->
   <script>
@@ -398,91 +418,7 @@ function closePopupCon() {
       });
     });
   </script>
-<!-- slider -->
-<!-- script of slider -->
-<!-- <script>
-  var slideIndex1 = 0;
-  showSlides1();
-
-  function plusSlides1(n) {
-    showSlides1(slideIndex1 += n);
-  }
-
-  function currentSlide1(n) {
-    showSlides1(slideIndex1 = n);
-  }
-
-  function showSlides1() {
-    var i;
-    var slides = document.getElementsByClassName("slider1")[0].getElementsByTagName("img");
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    slideIndex1++;
-    if (slideIndex1 > slides.length) {slideIndex1 = 1}
-    slides[slideIndex1-1].style.display = "block";
-    setTimeout(showSlides1, 2000); // Change image every 2 seconds
-  }
-</script> -->
-<!-- end script of slider -->
-
-<!-- slider -->
-<!-- <button onclick="plusSlides(-1)" class="prev">&#10094;</button>
-<button style="margin-right: 12px;" onclick="plusSlides(1)" class="next">&#10095;</button> -->
-
-<!-- script of slider -->
-<!-- <script>
-  var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides1(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("slider")[0].getElementsByTagName("img");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  slides[slideIndex-1].style.display = "block";
-}
-</script> -->
-  <!-- virtual tour -->
-
-  <!--  -->
   
-  
-  <script>
-
-    var slideIndex = 1;
-    showSlides(slideIndex);
-
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("slider")[0].getElementsByTagName("img");
-        if (n > slides.length) {slideIndex = 1}    
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
-        }
-        slides[slideIndex-1].style.display = "block";  
-    }
-</script>
 
 
 <!-- info section -->
