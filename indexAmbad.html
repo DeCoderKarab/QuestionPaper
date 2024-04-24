@@ -111,16 +111,35 @@
           <div class="col-md-6">
             <div class="img-box">
               <div class="slider">
-                <img style="height: 400px; " src="images/front.jpeg" alt="">
-                <img style="height: 400px; " src="images/interior.jpeg" alt="">
-                <img style="height: 400px; " src="images/interior2.jpg" alt="">
-                <img style="height: 400px;" src="images/interior3.jpg" alt=""> 
+                <img style="height: 400px; " src="images/Mayur Site/drone view.jpg" alt="">
+              <img style="height: 400px; " src="images/Mayur Site/front view.jpg" alt="">
+              <img style="height: 400px;" src="images/Mayur Site/side view.jpg" alt="">
+              <img style="height: 400px; " src="images/Mayur Site/front view.jpg" alt=""> 
               </div>
               <button onclick="plusSlides(-1, 0)" class="prev">&#10094;</button>
-              <button style="margin-right: 12px;" onclick="plusSlides(1, 0)" class="next">&#10095;</button>
+              <button  onclick="plusSlides(1, 0)" class="next">&#10095;</button>
             </div>
           </div>
+          <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
           
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+            
+            function showSlides(n) {
+              let i;
+              const slides = document.querySelectorAll('.slider img');
+              console.log(slides.length)
+              if (n > slides.length) { slideIndex = 1; }
+              if (n < 1) { slideIndex = slides.length; }
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+              }
+              slides[slideIndex - 1].style.display = 'block';
+            }
+          </script>
           <div class="col-md-6">
             <div class="detail-box">
               <div style="margin-top: -20px;" class="heading_container">
@@ -129,7 +148,7 @@
               </div>
               <br>
               <h6>SPECIFICATION<span style="color: rgb(231, 239, 20);"></span></h6>
-              <strong> <img style="width: 5%; margin-top: -10px;" src="images/bath.png" alt=""> 1Bath &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 1Bed &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 1KITCHENT</strong>
+              <strong> <img style="width: 5%; margin-top: -10px;" src="images/bath.png" alt=""> 1Bath &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 1Bed &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 1KITCHEN</strong>
               <h1> </h1>
               <h6>Area<span style="color: rgb(234, 241, 18);"></span></h6>
               <strong> <img style="width: 5%; margin-top: -10px;" src="images/measure.png" alt=""> 800sqft</strong>
@@ -199,13 +218,13 @@
         <div class="col-md-6">
           <div class="img-box">
             <div class="slider">
-              <img style="height: 400px; " src="images/about-img.jpg" alt="">
-              <img style="height: 400px; " src="images/about-us.jpg" alt="">
-              <img style="height: 400px;" src="images/about-img.jpg" alt="">
-              <img style="height: 400px;" src="images/project-1.jpg" alt="">
+              <img style="height: 400px; " src="images/Mayur Site/drone view.jpg" alt="">
+              <img style="height: 400px; " src="images/Mayur Site/front view.jpg" alt="">
+              <img style="height: 400px;" src="images/Mayur Site/side view.jpg" alt="">
+              <!-- <img style="height: 400px;" src="images/project-1.jpg" alt=""> -->
             </div>
             <button onclick="plusSlides2(-1)" class="prev">&#10094;</button>
-            <button style="margin-right: 12px;" onclick="plusSlides2(1)" class="next">&#10095;</button>
+            <button  onclick="plusSlides2(1)" class="next">&#10095;</button>
           </div>
         </div>
         <div class="col-md-6">
@@ -216,7 +235,7 @@
             </div>
             <br>
             <h6>SPECIFICATION<span style="color: rgb(231, 239, 20);"></span></h6>
-            <strong> <img style="width: 5%; margin-top: -10px;" src="images/bath.png" alt=""> 1Bath &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 2Bed &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 1KITCHENT</strong>
+            <strong> <img style="width: 5%; margin-top: -10px;" src="images/bath.png" alt=""> 1Bath &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 2Bed &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 1KITCHEN</strong>
             <h1> </h1>
             <h6>Area<span style="color: rgb(234, 241, 18);"></span></h6>
             <strong> <img style="width: 5%; margin-top: -10px;" src="images/measure.png" alt=""> 1200sqft</strong>
@@ -297,53 +316,11 @@ function closePopup1() {
 }
 
   // site supervisor details
-  var slideIndex2 = 0;
-  showSlides2();
-
-  function plusSlides2(n) {
-    slideIndex2 += n;
-    showSlides2();
-  }
-
-  function showSlides2() {
-    var i;
-    var slides = document.querySelector("#2bhk .slider").querySelectorAll("img");
-    if (slideIndex2 >= slides.length) { slideIndex2 = 0; }
-    if (slideIndex2 < 0) { slideIndex2 = slides.length - 1; }
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    slides[slideIndex2].style.display = "block";
-  }
+  
 </script>
 
 <script>
-  var slideIndex = [0, 0]; // Array to store the slide index for each slider
-
-  // Call showSlides function for both sliders initially
-  showSlides(0);
-  showSlides(1);
-
-  // Function to change slides for a specific slider
-  function plusSlides(n, sliderIndex) {
-    slideIndex[sliderIndex] += n;
-    showSlides(sliderIndex);
-  }
-
-  // Function to display slides for a specific slider
-  function showSlides(sliderIndex) {
-    var i;
-    var sectionId = sliderIndex === 0 ? "1bhk" : "2bhk"; // Determine which section to target
-    var section = document.getElementById(sectionId);
-    var slides = section.querySelectorAll(".slider")[sliderIndex].querySelectorAll("img, iframe");
-    if (slideIndex[sliderIndex] >= slides.length) { slideIndex[sliderIndex] = 0; }
-    if (slideIndex[sliderIndex] < 0) { slideIndex[sliderIndex] = slides.length - 1; }
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    slides[slideIndex[sliderIndex]].style.display = "block";
-  }
-
+ 
   // :-  video
 
   document.addEventListener('DOMContentLoaded', function () {

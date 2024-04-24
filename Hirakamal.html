@@ -131,7 +131,7 @@
             </div>
             <br>
             <h6>SPECIFICATION<span style="color: rgb(231, 239, 20);"></span></h6>
-            <strong> <img style="width: 5%; margin-top: -10px;" src="images/bath.png" alt=""> 1Bath &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 2Bed &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 1KITCHENT</strong>
+            <strong> <img style="width: 5%; margin-top: -10px;" src="images/bath.png" alt=""> 1Bath &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 2Bed &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 1KITCHEN</strong>
             <h1> </h1>
             <h6>Area<span style="color: rgb(234, 241, 18);"></span></h6>
             <strong> <img style="width: 5%; margin-top: -10px;" src="images/measure.png" alt=""> 800sqft</strong>
@@ -149,11 +149,7 @@
     </div>
 
     <h1> </h1>
-  <!-- </section>
 
-  
-
-  <section class="about_section layout_padding-bottom"> -->
     
     <div  class="container">
       <div class="row">
@@ -238,7 +234,7 @@
           </div>
           <br>
           <h6>SPECIFICATION<span style="color: rgb(231, 239, 20);"></span></h6>
-          <strong> <img style="width: 5%; margin-top: -10px;" src="images/bath.png" alt=""> 1Bath &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 3Bed &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 1KITCHENT</strong>
+          <strong> <img style="width: 5%; margin-top: -10px;" src="images/bath.png" alt=""> 1Bath &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 3Bed &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img style="width: 5%; margin-top: -10px;" src="images/bed.png" alt=""> 1KITCHEN</strong>
           <h1> </h1>
           <h6>Area<span style="color: rgb(234, 241, 18);"></span></h6>
           <strong> <img style="width: 5%; margin-top: -10px;" src="images/measure.png" alt=""> 1200sqft</strong>
@@ -256,11 +252,7 @@
   </div>
 
   <h1> </h1>
-<!-- </section>
 
-
-
-<section class="about_section layout_padding-bottom"> -->
   
   <div  class="container">
     <div class="row">
@@ -314,6 +306,17 @@
 </div>
 </section>  
 <!-- end second property section  -->
+<!-- other category -->
+<section  id="other" style="display: none;">
+  <div class="page">
+    <div class="errPage">
+        <div class="icon">😕</div>
+        <div class="message">Only 2BHK and 3BHK available in Hirakamal Site <br>For further imformation <a id="showDetails"  href="tel:+919890531862">Contact</a></div>
+        <button style="margin-top: 50px; margin-left: 20px;" class="back button" onclick="window.location.href='index.html';">&#8592; Back </button>
+    </div>
+</div>
+</section>
+
   <!--  -->
   <script>
      // site supervisor details
@@ -492,6 +495,9 @@ function showSlides(n) {
             document.getElementById('2bhk').style.display = 'block';
         } else if (category === '3BHK') {
             document.getElementById('3bhk').style.display = 'block';
+        }else if(category=='3rkRow' || category=='D_banglow' || category=='c_rowhouse' || category=='shop' || category=='na_plot')
+        {
+            document.getElementById('other').style.display = 'block';
         }
     </script>
 

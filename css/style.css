@@ -81,13 +81,13 @@ body {
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
-  animation: slideshow 10s infinite;  /* 2 seconds per image, 3 images total */
+  animation: slideshow 20s infinite;  /* 2 seconds per image, 3 images total */
 }
 
 @keyframes slideshow {
-  0% { background-image: url(../images/bg-home.jpg); }
-  50% { background-image: url(../images/project-1.jpg); }
-  100% { background-image: url(../images/bg-home2.jpg); }
+  0% { background-image: url(../images/Mayur_Site/front\ view.jpg); }
+  50% { background-image: url(../images/villa/villaImage.jpg); }
+  100% { background-image: url(../images/Hirakamal/site\ plan.jpg); }
   
 }
 
@@ -1029,49 +1029,35 @@ a:focus {
 
 
 /* this is slider in about us*/
-.slider {
+.img-box {
   position: relative;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
 }
-
+.slider {
+  display: flex;
+  overflow-x: hidden;
+}
 .slider img {
-  width: 100%;
-  height: auto;
-  display: none;
+  flex: 0 0 auto;
+  height: 400px;
 }
-
-.slider img:first-child {
-  display: block;
-}
-
-.prev,
-.next {
-  cursor: pointer;
+.prev, .next {
   position: absolute;
   top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: rgb(23, 239, 38);
-  font-weight: bold;
-  font-size: 20px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1;
 }
-
+.prev {
+  left: 0;
+}
 .next {
   right: 0;
-  border-radius: 3px 0 0 3px;
 }
-
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
+/* sliderimages */
 /*property details*/
 .property-cart {
   display: flex;
@@ -1272,28 +1258,30 @@ a:focus {
 
 /* end gudi */
 
-
-/* zoom in img */
-/* .img-box {
+/* err page */
+.page {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.box {
-  width: 48%;
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
+.errPage {
+  text-align: center;
 }
 
-.zoom-img {
-  width: 100%;
-  transition: transform 0.3s ease-in-out;
+.message {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-
-.box:hover .zoom-img {
-  transform: scale(1.1);
-} */
-
-/* end zoom in img */
+.icon {
+  font-size: 48px;
+  color: #999;
+}
+/* err page */
