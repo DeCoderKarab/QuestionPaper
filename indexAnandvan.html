@@ -25,7 +25,7 @@
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
   <style>
-    .popup-container,.popup-containerContact {
+    .popup-container,.popup-container1 {
       display: none;
       position: fixed;
       top: 50%;
@@ -40,7 +40,7 @@
       z-index: 9999; /* Ensure popup is on top */
     }
     
-    .close-button {
+    .close-button, .close-button1 {
       position: absolute;
       top: 5px;
       right: 10px;
@@ -141,7 +141,7 @@
             <br>
             <a style="margin-top: 50px;" href="tel:8888881716">Contact</a>
             &nbsp;&nbsp;&nbsp;
-            <a id="fullscreenButton1" href="#" class="fullscreen-button">Get A Virtual Tour</a>
+            <a  href="contact.html" class="fullscreen-button">inquiry</a>
             
           </div>
         </div>
@@ -149,11 +149,7 @@
     </div>
 
     <h1> </h1>
-  <!-- </section>
-
   
-
-  <section class="about_section layout_padding-bottom"> -->
     
     <div  class="container">
       <div class="row">
@@ -177,7 +173,7 @@
             <strong>Rose Bakery</strong>
             <h1> </h1>
             <h6>Price<span style="color: rgb(234, 241, 18);"></span></h6>
-            <strong>Lakhs </strong>
+            <strong>35 - 75 Lakhs </strong>
             <h1> </h1>
             
             &nbsp;&nbsp;&nbsp;
@@ -186,7 +182,7 @@
 
             <strong id="showDetails" style="cursor: pointer; color: red;">Milan Borsaniya</strong>
             <br>
-            <strong id="showDetails" style="cursor: pointer; color: red;">Nikhil Sonaje</strong>
+            <strong id="showDetails1" style="cursor: pointer; color: red;">Nikhil Sonaje</strong>
             
             
             <br>
@@ -208,8 +204,8 @@
     <span class="close-button" onclick="closePopup()">&times;</span>
     <iframe src="milan.html" frameborder="0" style="width: 100%; height: calc(100% - 30px);"></iframe>
   </div>
-  <div id="popupContainerContact" class="popup-container">
-    <span class="close-button1" onclick="closePopup2()">&times;</span>
+  <div id="popupContainer1" class="popup-container1">
+    <span class="close-button1" onclick="closePopup1()">&times;</span>
     <iframe src="nikhil.html" frameborder="0" style="width: 100%; height: calc(100% - 30px);"></iframe>
   </div>
   <script>
@@ -358,6 +354,8 @@ function closePopup() {
   document.getElementById("popupContainer").style.display = "none";
 }
 
+// second site supervisor
+
 document.getElementById("showDetails1").addEventListener("click", function() {
   var popupContainer = document.getElementById("popupContainer1");
   popupContainer.style.display = "block";
@@ -365,21 +363,7 @@ document.getElementById("showDetails1").addEventListener("click", function() {
 function closePopup1() {
   document.getElementById("popupContainer1").style.display = "none";
 }
-document.getElementById("showDetailsContact").addEventListener("click", function() {
-  var popupContainer = document.getElementById("popupContainerContact");
-  popupContainer.style.display = "block";
-});
-function closePopupCon() {
-  document.getElementById("popupContainerContact").style.display = "none";
-}
 
-document.getElementById("showDetailsContact1").addEventListener("click", function() {
-  var popupContainer = document.getElementById("popupContainerContact");
-  popupContainer.style.display = "block";
-});
-function closePopupCon() {
-  document.getElementById("popupContainerContact").style.display = "none";
-}
 
 
   // site supervisor details
@@ -444,7 +428,7 @@ function closePopupCon() {
             </div>
             <p >
               <a style="color: white;" href="tel:919890531862">
-                +91 9890531862
+                +91 7666399195
               </a>
               
             </p>
@@ -455,7 +439,7 @@ function closePopupCon() {
             </div>
             <p   >
               <a style="color: white;" href="mailto:suryawanshik207@gmail.com">
-                demo@gmail.com
+                musaleestates@gmail.com
               </a>
               
             </p>
@@ -468,7 +452,7 @@ function closePopupCon() {
             Information
           </h5>
           <p>
-            Musale Estate: Crafting dream homes into reality. With a passion for excellence, we sculpt exquisite dwellings that redefine luxury living
+           <b> Musale Estate : </b>Crafting dream homes into reality. With a passion for excellence, we sculpt exquisite dwellings that redefine luxury living
           </p>
         </div>
       </div>
@@ -480,26 +464,26 @@ function closePopupCon() {
           </h5>
           <ul>
             <li>
-              <a style="color: rgb(22, 238, 242);" href="Properti.html">
-                Balaji Park
+              <a style="color: rgb(22, 238, 242);" href="indexAnandvan.html">
+                Anandvan (Tarawal Nagar)
+              </a>
+            </li>
+            <h1> </h1>
+            <li>
+              <a style="color: rgb(22, 238, 242);" href="indexHirakamal.html">
+                Hirakamal 
               </a>
             </li>
             <h1> </h1>
             <li>
               <a style="color: rgb(22, 238, 242);" href="Properti.html">
-                Balaji Estate
+                Balaji Villas 
               </a>
             </li>
             <h1> </h1>
             <li>
-              <a style="color: rgb(22, 238, 242);" href="Properti.html">
-                Patil park
-              </a>
-            </li>
-            <h1> </h1>
-            <li>
-              <a style="color: rgb(22, 238, 242);" href="Properti.html">
-                Ashok Nagar
+              <a style="color: rgb(22, 238, 242);" href="indexAmbad.html">
+                Satpur
               </a>
             </li>
             
